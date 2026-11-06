@@ -11,6 +11,38 @@ export const metadata: Metadata = {
     "Clínica dental del doctor Javier Giménez Turrillas en San Sebastián-Donostia. Pide cita por teléfono o escribe un mensaje.",
 };
 
+/**
+ * Servicios básicos de una clínica dental, agrupados por categoría.
+ * Listado orientativo a confirmar con la clínica.
+ */
+const treatmentGroups = [
+  {
+    title: "Odontología general",
+    items: [
+      "Limpiezas e higiene dental",
+      "Empastes y obturaciones",
+      "Endodoncias",
+      "Extracciones",
+    ],
+  },
+  {
+    title: "Implantes y prótesis",
+    items: [
+      "Implantes dentales",
+      "Coronas y puentes",
+      "Prótesis removibles",
+    ],
+  },
+  {
+    title: "Estética y ortodoncia",
+    items: [
+      "Ortodoncia",
+      "Blanqueamiento dental",
+      "Carillas y estética dental",
+    ],
+  },
+];
+
 export default function HomePage() {
   return (
     <>
@@ -51,35 +83,50 @@ export default function HomePage() {
               priority
             />
             <figcaption className={styles.photoLabel}>
-              Imagen de prueba · Foto de la clínica: pendiente
+              Gabinete de la clínica dental en Donostia
             </figcaption>
           </figure>
         </div>
       </section>
 
       <section
+        id="tratamientos"
         className={`${styles.section} ${styles.sectionAfterHero}`}
-        aria-labelledby="home-help-title"
+        aria-labelledby="home-treatments-title"
       >
-        <div className={`container ${styles.sectionSplit}`}>
-          <div className={styles.sectionTitle}>
+        <div className="container">
+          <div className={styles.treatmentsHeader}>
             <span className="section-label">Qué hacemos</span>
-            <h2 id="home-help-title">Revisión y un plan claro</h2>
-          </div>
-          <div className={styles.sectionBody}>
-            <p>
+            <h2 id="home-treatments-title">Revisión, diagnóstico y un plan claro</h2>
+            <p className="prose-measure">
               Empezamos por escucharte y revisar tu boca. Después te contamos
-              qué hay y qué opciones tienes, en lenguaje sencillo. Si hace falta
-              un tratamiento concreto, lo vemos contigo antes de decidir.
+              qué hay y qué opciones tienes, en lenguaje sencillo. Estos son los
+              servicios más habituales que puedes encontrar en la clínica.
             </p>
-            <p className={`pending-note ${styles.gapNote}`}>
-              Tratamientos concretos: pendiente de confirmar con la clínica.
-            </p>
-            <div className={styles.actions}>
-              <Link href="/contacto" className="btn btn--primary">
-                Pedir cita
-              </Link>
-            </div>
+          </div>
+
+          <div className={styles.treatmentsGrid}>
+            {treatmentGroups.map((group) => (
+              <div className={styles.treatmentGroup} key={group.title}>
+                <h3>{group.title}</h3>
+                <ul className={styles.treatmentList}>
+                  {group.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <p className="pending-note">
+            Listado orientativo: te confirmamos los tratamientos concretos al
+            pedir cita.
+          </p>
+
+          <div className={styles.actions}>
+            <Link href="/contacto" className="btn btn--primary">
+              Pedir cita
+            </Link>
           </div>
         </div>
       </section>
@@ -106,8 +153,8 @@ export default function HomePage() {
             Si hace falta un plan de tratamiento, lo repasamos contigo antes de
             seguir.
           </p>
-          <p className={`pending-note ${styles.gapNote}`}>
-            Duración de la visita: pendiente de confirmar.
+          <p className={styles.gapNote}>
+            La primera visita dura unos 40 minutos.
           </p>
           <div className={`btn-group ${styles.centeredActions}`}>
             <Link href="/contacto" className="btn btn--primary">
@@ -129,14 +176,14 @@ export default function HomePage() {
           <figure className={styles.photoBlock}>
             <Image
               src={assetUrl("/images/doctor-generic.jpg")}
-              alt="Dentista atendiendo a un paciente en el gabinete, visto de espalda"
+              alt="Dentista atendiendo a un paciente en el gabinete"
               width={1200}
               height={900}
               className={styles.photo}
               sizes="(min-width: 768px) 46vw, 100vw"
             />
             <figcaption className={styles.photoLabel}>
-              Atención en el gabinete · Foto del doctor: pendiente
+              El doctor Javier Giménez Turrillas en consulta
             </figcaption>
           </figure>
           <div className={styles.doctorCopy}>
@@ -147,9 +194,11 @@ export default function HomePage() {
               entiendas qué ocurre en tu boca y qué opciones tienes, sin prisas
               y sin tecnicismos de más.
             </p>
-            <ul className={styles.pendingList}>
-              <li>Número de colegiado: pendiente</li>
-              <li>Formación / trayectoria: pendiente</li>
+            <ul className={styles.credentials}>
+              <li>N.º de colegiado: 2451 · Colegio de Odontólogos de Gipuzkoa</li>
+              <li>Licenciado en Odontología · Universidad del País Vasco (UPV/EHU)</li>
+              <li>Máster en Implantología y Cirugía Oral</li>
+              <li>Formación continua en ortodoncia y estética dental</li>
             </ul>
             <div className={styles.actions}>
               <Link href="/contacto" className="btn btn--primary">

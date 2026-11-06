@@ -45,30 +45,6 @@
   box-shadow: 0 8px 18px rgb(17 94 89 / 0.28);
 }
 
-.link svg {
-  width: 20px;
-  height: 20px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-}
-
-/* El "f" de Facebook va relleno; Instagram va de trazo. */
-.link svg path {
-  fill: currentColor;
-  stroke: none;
-}
-
-.link svg rect,
-.link svg circle {
-  stroke: currentColor;
-}
-
-.iconDot {
-  fill: currentColor;
-  stroke: none;
-}
-
 /* Solo en pantallas anchas, donde queda hueco lateral sin tapar contenido. */
 @media (min-width: 1280px) {
   .rail {

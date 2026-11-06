@@ -116,11 +116,6 @@
   color: var(--color-text);
 }
 
-.privacyPending {
-  color: var(--color-text-muted);
-  font-weight: 400;
-}
-
 .submitWrap {
   display: flex;
   flex-direction: column;
@@ -148,13 +143,6 @@
   font-size: 16px;
   line-height: 1.5;
   color: var(--color-error);
-}
-
-.statusDemo {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.5;
-  color: var(--color-text-muted);
 }
 
 .statusError a {

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BrandLogo } from "@/components/BrandLogo";
+import { SocialLinks } from "@/components/SocialLinks";
 import { navLinks, site } from "@/lib/site";
 import styles from "./Footer.module.css";
 
@@ -32,8 +33,15 @@ export function Footer() {
             {site.hours.summary}
           </p>
           <p className={styles.legals}>
-            Aviso legal · Privacidad · Cookies — pendientes de revisión
+            <Link href="/aviso-legal">Aviso legal</Link> ·{" "}
+            <Link href="/privacidad">Privacidad</Link> ·{" "}
+            <Link href="/cookies">Cookies</Link>
           </p>
+        </div>
+
+        <div className={styles.social}>
+          <span className={styles.socialLabel}>Síguenos</span>
+          <SocialLinks />
         </div>
       </div>
     </footer>

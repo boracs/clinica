@@ -180,6 +180,72 @@
   line-height: 1.55;
 }
 
+/* Tratamientos: cabecera + cuadrícula de categorías (servicios básicos). */
+.treatmentsHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  max-width: 65ch;
+}
+
+.treatmentsHeader h2 {
+  color: var(--color-text);
+}
+
+.treatmentsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .treatmentsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+}
+
+.treatmentGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+}
+
+.treatmentList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.treatmentList li {
+  position: relative;
+  padding-left: var(--space-6);
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.treatmentList li::before {
+  content: "";
+  position: absolute;
+  left: var(--space-2);
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
 /* Escritorio: título izquierda, cuerpo derecha. Sin zigzag.
    Columna de título acotada para evitar el «pasillo» vacío. */
 @media (min-width: 768px) {
@@ -363,8 +429,8 @@
   text-decoration: underline;
 }
 
-/* Sobre nosotros: lista de datos pendientes. */
-.pendingList {
+/* Sobre nosotros: formación y colegiado del doctor. */
+.credentials {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
@@ -375,10 +441,23 @@
   max-width: 65ch;
 }
 
-.pendingList li {
-  font-size: 14px;
-  line-height: 1.4;
-  color: var(--color-text-muted);
+.credentials li {
+  position: relative;
+  padding-left: var(--space-6);
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--color-text);
+}
+
+.credentials li::before {
+  content: "";
+  position: absolute;
+  left: var(--space-2);
+  top: 0.58em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
 }
 
 /* Foto del portal en la sección "Dónde": ocupa todo el ancho. */

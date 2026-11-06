@@ -40,12 +40,19 @@ export const navLinks = [
 
 /**
  * Redes sociales de la barra lateral.
- * TODO: sustituir `href: "#"` por las URLs reales de las cuentas
- * (el icono queda como marcador mientras tanto).
+ * NOTA: URLs de demo — sustituir por las cuentas reales cuando existan.
  */
 export const socialLinks = [
-  { id: "instagram", label: "Instagram", href: "#" },
-  { id: "facebook", label: "Facebook", href: "#" },
+  {
+    id: "instagram",
+    label: "Instagram",
+    href: "https://www.instagram.com/clinicadentaljaviergimenez",
+  },
+  {
+    id: "facebook",
+    label: "Facebook",
+    href: "https://www.facebook.com/clinicadentaljaviergimenez",
+  },
 ] as const;
 
 /**

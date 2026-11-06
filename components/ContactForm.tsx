@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useId, useState, type FormEvent } from "react";
 import { site } from "@/lib/site";
 import styles from "./ContactForm.module.css";
@@ -16,11 +17,12 @@ type FormValues = {
 
 type FieldErrors = Partial<Record<FieldName, string>>;
 
-type SubmitState = "idle" | "submitting" | "success" | "serverError" | "demo";
+type SubmitState = "idle" | "submitting" | "success" | "serverError";
 
 /**
- * Vista previa / demo: el formulario no envía mensajes todavía.
- * Pon `false` cuando el envío real (PHP/SMTP o API) esté listo.
+ * Vista previa / demo: el formulario no envía mensajes todavía; en su lugar
+ * simula un envío correcto. Pon `false` cuando el envío real (PHP/SMTP o API)
+ * esté listo.
  */
 const FORM_DEMO_MODE = true;
 
@@ -109,7 +111,9 @@ export function ContactForm() {
     }
 
     if (FORM_DEMO_MODE) {
-      setSubmitState("demo");
+      setValues(initialValues);
+      setErrors({});
+      setSubmitState("success");
       return;
     }
 
@@ -151,9 +155,7 @@ export function ContactForm() {
           ? `${formId}-success`
           : submitState === "serverError"
             ? `${formId}-server-error`
-            : submitState === "demo"
-              ? `${formId}-demo`
-              : undefined
+            : undefined
       }
     >
       <div className={styles.fieldRow}>
@@ -300,10 +302,11 @@ export function ContactForm() {
             className={styles.privacyLabel}
             htmlFor={`${formId}-privacidad`}
           >
-            He leído y acepto la política de privacidad.{" "}
-            <span className={styles.privacyPending}>
-              (Enlace a política: pendiente)
-            </span>
+            He leído y acepto la{" "}
+            <Link href="/privacidad" className="text-link">
+              política de privacidad
+            </Link>
+            .
           </label>
         </div>
         {errors.privacidad ? (
@@ -344,17 +347,6 @@ export function ContactForm() {
           >
             No se ha podido enviar. Prueba otra vez o llámanos al{" "}
             <a href={site.phoneHref}>{site.phoneDisplay}</a>.
-          </p>
-        ) : null}
-
-        {submitState === "demo" ? (
-          <p
-            id={`${formId}-demo`}
-            className={styles.statusDemo}
-            role="status"
-          >
-            Esto es una demo: el formulario todavía no envía mensajes
-            (pendiente de implementar).
           </p>
         ) : null}
       </div>

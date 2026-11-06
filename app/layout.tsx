@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Source_Sans_3, Source_Serif_4 } from "next/font/google";
+import { CookieConsent } from "@/components/CookieConsent";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { MobileCtaBar } from "@/components/MobileCtaBar";
@@ -135,6 +136,7 @@ export default function RootLayout({
           <Footer />
           <MobileCtaBar />
         </div>
+        <CookieConsent />
       </body>
     </html>
   );

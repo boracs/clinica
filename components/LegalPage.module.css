@@ -1,0 +1,119 @@
+.hero {
+  padding-block: var(--space-12);
+  background:
+    radial-gradient(1200px 480px at 12% -8%, rgb(197 165 116 / 0.08), transparent 60%),
+    var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding-block: var(--space-16);
+  }
+}
+
+.heroCopy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  text-align: left;
+}
+
+.heroCopy h1 {
+  max-width: 24ch;
+}
+
+.kicker {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--color-text-muted);
+}
+
+.updated {
+  margin: 0;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.body {
+  padding-block: var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .body {
+    padding-block: var(--space-16);
+  }
+}
+
+.prose {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 65ch;
+}
+
+.prose h2 {
+  margin-top: var(--space-4);
+  font-size: 1.375rem;
+  line-height: 1.25;
+}
+
+.prose h3 {
+  font-size: 1.125rem;
+  line-height: 1.25;
+}
+
+.prose p {
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.prose ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+  padding-left: var(--space-6);
+}
+
+.prose li {
+  color: var(--color-text);
+  line-height: 1.55;
+}
+
+.prose a {
+  color: var(--color-action);
+  text-decoration: underline;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.prose th,
+.prose td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.prose th {
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+@media (max-width: 639px) {
+  .prose table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
