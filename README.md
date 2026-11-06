@@ -29,8 +29,26 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Despliegue
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+La web exporta HTML estático (`output: "export"`) a la carpeta `out/`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Prueba en GitHub Pages (ahora)**
+
+1. Sube el proyecto a un repositorio en GitHub.
+2. En **Settings → Pages → Build and deployment**, elige **Source: GitHub Actions**.
+3. Haz push a la rama `main`. El workflow de `.github/workflows/deploy.yml` compila y publica automáticamente.
+
+La URL queda como `https://TU-USUARIO.github.io/TU-REPO/`. No hace falta tocar nada: la URL base y el `basePath` se calculan solos a partir del nombre del repositorio.
+
+**Dominio definitivo (más adelante)**
+
+Cuando pases al dominio real, cambia en `.github/workflows/deploy.yml` (o en el `env` del build) la variable:
+
+```
+NEXT_PUBLIC_SITE_URL=https://www.javiergimenezturrillas.com
+```
+
+El `basePath` queda vacío automáticamente al ser una URL en la raíz.
+
+> Si en vez de GitHub Pages despliegas en un hosting con dominio propio (cPanel, Apache…), simplemente sube el contenido de `out/` y define `NEXT_PUBLIC_SITE_URL` con tu dominio al compilar. El `canonical`, `sitemap.xml` y `robots.txt` ya apuntan a esa URL.

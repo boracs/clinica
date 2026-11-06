@@ -1,0 +1,117 @@
+================================================================================
+CLÍNICA DENTAL JAVIER GIMÉNEZ TURRILLAS
+Notas de DESPLIEGUE y PENDIENTES
+================================================================================
+
+--------------------------------------------------------------------------------
+1. DESPLIEGUE
+--------------------------------------------------------------------------------
+
+A) PRUEBA EN GITHUB PAGES (ahora)
+   1. Sube el proyecto a un repositorio en GitHub.
+   2. En Settings -> Pages -> Build and deployment, elige
+      "Source: GitHub Actions".
+   3. Haz push a la rama "main". El workflow .github/workflows/deploy.yml
+      compila y publica solo.
+      URL final: https://TU-USUARIO.github.io/TU-REPO/
+
+   IMPORTANTE:
+   - Si tu rama no se llama "main" (por ejemplo "master"), cambia la línea
+     "branches: [main]" dentro de .github/workflows/deploy.yml.
+   - La URL base y el basePath se calculan solos a partir del nombre del
+     repositorio. NO hay que tocar nada más.
+
+B) DOMINIO DEFINITIVO (más adelante)
+   - Dominio: https://www.javiergimenezturrillas.com
+   - Opción 1 (GitHub Pages con dominio propio): vincula el dominio en
+     Settings -> Pages, y en deploy.yml cambia:
+         NEXT_PUBLIC_SITE_URL: https://www.javiergimenezturrillas.com
+   - Opción 2 (hosting propio cPanel/Apache): compila con esa misma variable
+     y sube el contenido de la carpeta "out/" al servidor.
+   - Al ser una URL en la raíz, el basePath queda vacío automáticamente.
+
+C) AVISO IMPORTANTE SOBRE EL FORMULARIO DE CONTACTO
+   - GitHub Pages es estático (sin PHP ni servidor), por lo que el formulario
+     de contacto NO puede enviar mensajes allí. Sirve solo como prueba visual.
+   - El envío real se configura cuando esté en el servidor definitivo (cPanel)
+     usando public/contacto.php. Hay que poner FORM_DEMO_MODE = false en
+     components/ContactForm.tsx (ahora está en "true", modo demo).
+
+--------------------------------------------------------------------------------
+2. VARIABLES DE ENTORNO (.env / .env.example)
+--------------------------------------------------------------------------------
+
+- NEXT_PUBLIC_SITE_URL
+    URL base para canonical, sitemap, robots y Open Graph.
+    - Por defecto: https://www.javiergimenezturrillas.com
+    - GitHub Pages: https://TU-USUARIO.github.io/TU-REPO
+    El basePath se deriva automáticamente de esta variable.
+
+- CONTACT_TO (opcional)
+    Destinatario del formulario. Por defecto consulta@javiergimenezturrillas.com
+
+- CONTACT_MAIL_MODE=log (solo desarrollo)
+    Valida y registra en consola, sin enviar correo real.
+
+- CONTACT_WEBHOOK_URL / CONTACT_WEBHOOK_TOKEN (opcional, envío real)
+    Webhook (Zapier, Make, worker propio...) que recibe el JSON del formulario
+    y reenvía el correo. Sin esto, el envío responde "no configurado".
+
+--------------------------------------------------------------------------------
+3. PENDIENTES DE CONTENIDO (datos reales de la clínica)
+--------------------------------------------------------------------------------
+
+Faltan datos que hoy aparecen marcados como "pendiente" en la web. NO se han
+inventado a propósito; hay que pedirlos a la clínica y rellenarlos:
+
+- Foto real de la clínica (home: "Imagen de prueba · Foto de la clínica: pendiente").
+- Foto del doctor (home y sobre-nosotros: "Foto del doctor: pendiente").
+- Número de colegiado del doctor (sobre-nosotros).
+- Formación / trayectoria del doctor (sobre-nosotros).
+- Tratamientos concretos que ofrecen (home: "Tratamientos concretos: pendiente").
+- Duración de la primera visita (sobre-nosotros).
+- Número de WhatsApp (si quieren botón de WhatsApp; no mostrarlo hasta tenerlo).
+- Equipo / más personal (si lo hay).
+
+--------------------------------------------------------------------------------
+4. PENDIENTES LEGALES
+--------------------------------------------------------------------------------
+
+- Política de privacidad (en el formulario: "(Enlace a política: pendiente)").
+- Aviso legal, Privacidad y Cookies (en el footer: "pendientes de revisión").
+- Hay que redactar/pedir los textos legales reales y enlazarlos.
+
+--------------------------------------------------------------------------------
+5. PENDIENTES SEO / GEO (externos a la web)
+--------------------------------------------------------------------------------
+
+- Imagen Open Graph (og:image): ahora usa /images/bg-home-hero.jpg como
+  provisional. Sustituir por una imagen de marca dedicada de 1200x630 px
+  antes del lanzamiento (hay un TODO marcado en lib/site.ts).
+
+- Google Business Profile (ficha de Google Maps):
+  verificar la ficha y asegurarse de que nombre, dirección y teléfono (NAP)
+  coinciden exactamente con los de lib/site.ts. Es lo que más ayuda a salir
+  en el "paquete local" de Google Maps.
+
+- Google Search Console:
+  verificar el dominio y enviar el sitemap (https://TU-DOMINIO/sitemap.xml).
+
+- (Opcional) Añadir al esquema Dentist: priceRange y redes sociales (sameAs)
+  cuando se tengan datos reales.
+
+--------------------------------------------------------------------------------
+6. NOTAS TÉCNICAS MENORES
+--------------------------------------------------------------------------------
+
+- favicon.ico: el icono .ico de respaldo no se prefija con basePath en GitHub
+  Pages (comportamiento de Next). No es problema: el icono SVG que sí se usa
+  (brand/logo-mark.svg) está correctamente prefijado.
+
+- lib/contacto/mail.ts (sendContactMail) es un helper preparado para una futura
+  ruta /api/contacto, pero AHORA MISMO no se usa: el formulario hace POST a
+  /contacto.php (PHP de cPanel). No borrarlo sin decidir primero el envío final.
+
+- El contenido de "out/" y ".next/" se regenera en cada build; no se sube al
+  repositorio (está en .gitignore).
+================================================================================

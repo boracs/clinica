@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { site } from "@/lib/site";
+import { assetUrl, site } from "@/lib/site";
 import styles from "./BrandLogo.module.css";
 
 type BrandLogoProps = {
@@ -26,7 +26,7 @@ export function BrandLogo({
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         className={`${styles.mark} ${isFooter ? styles.markLg : ""}`}
-        src={site.brand.mark}
+        src={assetUrl(site.brand.mark)}
         alt=""
         width={isFooter ? 48 : 40}
         height={isFooter ? 48 : 40}

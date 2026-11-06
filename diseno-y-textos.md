@@ -100,9 +100,9 @@ Fotos reales de la clínica y del doctor cuando existan. Mientras no: bloque de 
 
 Una sola `h1` por página. Títulos de pestaña:
 
-- Home: `Clínica dental · Javier Giménez Turrillas · San Sebastián-Donostia`
-- Sobre nosotros: `Sobre nosotros · Clínica dental Javier Giménez Turrillas · San Sebastián-Donostia`
-- Contacto: `Pedir cita y contacto · Clínica dental Javier Giménez Turrillas · San Sebastián-Donostia`
+- Home: `Clínica dental Javier Giménez · Donostia`
+- Sobre nosotros: `Sobre nosotros · Clínica Giménez Turrillas · Donostia`
+- Contacto: `Pedir cita y contacto · Clínica Giménez Turrillas · Donostia`
 
 ---
 
@@ -143,7 +143,7 @@ WhatsApp: no hay número confirmado → no mostrar botón WhatsApp.
 
 ### Meta
 
-- **Title:** Clínica dental · Javier Giménez Turrillas · San Sebastián-Donostia
+- **Title:** Clínica dental Javier Giménez · Donostia
 - **Description:** Clínica dental del doctor Javier Giménez Turrillas en San Sebastián-Donostia. Pide cita por teléfono o escribe un mensaje.
 
 ### Cabecera (compartida)
@@ -211,7 +211,7 @@ WhatsApp: no hay número confirmado → no mostrar botón WhatsApp.
 
 ### Meta
 
-- **Title:** Sobre nosotros · Clínica dental Javier Giménez Turrillas · San Sebastián-Donostia
+- **Title:** Sobre nosotros · Clínica Giménez Turrillas · Donostia
 - **Description:** Conoce la clínica dental del doctor Javier Giménez Turrillas en San Sebastián-Donostia y cómo te atendemos.
 
 ### Hero de página
@@ -261,7 +261,7 @@ WhatsApp: no hay número confirmado → no mostrar botón WhatsApp.
 
 ### Meta
 
-- **Title:** Pedir cita y contacto · Clínica dental Javier Giménez Turrillas · San Sebastián-Donostia
+- **Title:** Pedir cita y contacto · Clínica Giménez Turrillas · Donostia
 - **Description:** Pide cita en la clínica dental del doctor Javier Giménez Turrillas. Teléfono 943 42 82 24 o escribe a consulta@javiergimenezturrillas.com.
 
 ### Hero de página

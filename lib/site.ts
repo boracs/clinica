@@ -37,3 +37,44 @@ export const navLinks = [
   { href: "/sobre-nosotros", label: "Sobre nosotros" },
   { href: "/contacto", label: "Contacto" },
 ] as const;
+
+/**
+ * URL base del sitio. Configurable en build mediante `NEXT_PUBLIC_SITE_URL`
+ * para probar en GitHub Pages antes de publicar en el dominio definitivo.
+ */
+export const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.javiergimenezturrillas.com"
+).replace(/\/+$/, "");
+
+/** Ruta base (subdirectorio) derivada de `siteUrl`. Vacía en el dominio raíz. */
+export const basePath = (() => {
+  try {
+    return new URL(siteUrl).pathname.replace(/\/+$/, "");
+  } catch {
+    return "";
+  }
+})();
+
+/** URL local de un asset con el base path (necesario en `next/image` e `<img>`). */
+export function assetUrl(path = "/"): string {
+  return `${basePath}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+/** URL absoluta para una ruta, conservando el base path (útil en GitHub Pages). */
+export function absoluteUrl(path = "/"): string {
+  return `${siteUrl}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+export const siteDescription =
+  "Clínica dental del doctor Javier Giménez Turrillas en San Sebastián-Donostia. Pide cita por teléfono o escribe un mensaje.";
+
+/**
+ * Imagen Open Graph (compartir en WhatsApp/redes sociales).
+ * TODO: sustituir por una imagen de marca dedicada de 1200×630 antes del lanzamiento.
+ */
+export const ogImage = {
+  url: absoluteUrl("/images/bg-home-hero.jpg"),
+  width: 1920,
+  height: 1080,
+  alt: site.nameShort,
+};

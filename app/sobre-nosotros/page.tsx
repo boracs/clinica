@@ -2,20 +2,25 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Atmosphere } from "@/components/Atmosphere";
-import { site } from "@/lib/site";
+import { pageOpenGraph } from "@/lib/seo";
+import { absoluteUrl, assetUrl, site } from "@/lib/site";
 import styles from "./page.module.css";
+
+const description =
+  "Conoce la clínica dental del doctor Javier Giménez Turrillas en San Sebastián-Donostia y cómo te atendemos.";
 
 export const metadata: Metadata = {
   title: "Sobre nosotros",
-  description:
-    "Conoce la clínica dental del doctor Javier Giménez Turrillas en San Sebastián-Donostia y cómo te atendemos.",
+  description,
+  alternates: { canonical: absoluteUrl("/sobre-nosotros/") },
+  openGraph: pageOpenGraph("/sobre-nosotros/", "Sobre nosotros", description),
 };
 
 export default function SobreNosotrosPage() {
   return (
     <>
       <section className={styles.hero} aria-labelledby="about-hero-title">
-        <Atmosphere src="/images/bg-about-hero.jpg" priority overlay="left" />
+        <Atmosphere src={assetUrl("/images/bg-about-hero.jpg")} priority overlay="left" />
         <div className={`container ${styles.heroCopy}`}>
           <h1 id="about-hero-title">Sobre la clínica</h1>
           <p className={`${styles.heroLead} prose-measure`}>
@@ -48,7 +53,7 @@ export default function SobreNosotrosPage() {
 
           <figure className={styles.photoBlock}>
             <Image
-              src="/images/doctor-generic.jpg"
+              src={assetUrl("/images/doctor-generic.jpg")}
               alt="Dentista atendiendo a un paciente en el gabinete, visto de espalda"
               width={1200}
               height={900}
@@ -66,7 +71,7 @@ export default function SobreNosotrosPage() {
         className={`${styles.section} ${styles.sectionAtmosphere}`}
         aria-labelledby="about-visit-title"
       >
-        <Atmosphere src="/images/bg-home-calm.jpg" overlay="soft" />
+        <Atmosphere src={assetUrl("/images/bg-home-calm.jpg")} overlay="soft" />
         <div className={`container ${styles.sectionInner}`}>
           <h2 id="about-visit-title">Qué puedes esperar al llegar</h2>
           <p>
@@ -102,7 +107,7 @@ export default function SobreNosotrosPage() {
           </div>
           <figure className={styles.portalBlock}>
             <Image
-              src="/images/portal-clinica.png"
+              src={assetUrl("/images/portal-clinica.png")}
               alt="Portal de acceso a Calle Loyola, 15, San Sebastián-Donostia"
               width={1200}
               height={900}

@@ -3,7 +3,8 @@ import { Source_Sans_3, Source_Serif_4 } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { MobileCtaBar } from "@/components/MobileCtaBar";
-import { site } from "@/lib/site";
+import { pageOpenGraph } from "@/lib/seo";
+import { absoluteUrl, assetUrl, site, siteDescription, siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const sourceSans = Source_Sans_3({
@@ -20,30 +21,75 @@ const sourceSerif = Source_Serif_4({
   display: "swap",
 });
 
+const defaultTitle =
+  "Clínica dental Javier Giménez · Donostia";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default:
-      "Clínica dental · Javier Giménez Turrillas · San Sebastián-Donostia",
+    default: defaultTitle,
     template:
-      "%s · Clínica dental Javier Giménez Turrillas · San Sebastián-Donostia",
+      "%s · Clínica Giménez Turrillas · Donostia",
   },
-  description:
-    "Clínica dental del doctor Javier Giménez Turrillas en San Sebastián-Donostia. Pide cita por teléfono o escribe un mensaje.",
+  description: siteDescription,
+  alternates: {
+    canonical: absoluteUrl("/"),
+  },
+  openGraph: pageOpenGraph("/", defaultTitle, siteDescription),
+  twitter: {
+    card: "summary_large_image",
+    title: defaultTitle,
+    description: siteDescription,
+    images: [absoluteUrl("/images/bg-home-hero.jpg")],
+  },
   icons: {
-    icon: [{ url: "/brand/logo-mark.svg", type: "image/svg+xml" }],
-    apple: [{ url: "/brand/logo-mark-on-dark.svg", type: "image/svg+xml" }],
+    icon: [{ url: assetUrl("/brand/logo-mark.svg"), type: "image/svg+xml" }],
+    apple: [
+      { url: assetUrl("/brand/logo-mark-on-dark.svg"), type: "image/svg+xml" },
+    ],
   },
 };
+
+const dayOfWeekMap: Record<string, string> = {
+  Lunes: "Monday",
+  Martes: "Tuesday",
+  Miércoles: "Wednesday",
+  Jueves: "Thursday",
+  Viernes: "Friday",
+};
+
+function formatTime(value: string): string {
+  const [hours, minutes] = value.split(":");
+  return `${hours.padStart(2, "0")}:${minutes}`;
+}
+
+const openingHoursSpecification = site.hours.days
+  .filter((day) => day.intervals.length > 0)
+  .flatMap((day) =>
+    day.intervals.map((interval) => {
+      const [opens, closes] = interval
+        .split(/[–-]/)
+        .map((part) => part.trim());
+      return {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: dayOfWeekMap[day.day],
+        opens: formatTime(opens),
+        closes: formatTime(closes),
+      };
+    }),
+  );
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Dentist",
+  "@id": `${absoluteUrl("/")}#dentist`,
   name: site.nameFull,
-  description:
-    "Clínica dental del doctor Javier Giménez Turrillas en San Sebastián-Donostia. Pide cita por teléfono o escribe un mensaje.",
+  description: siteDescription,
+  url: absoluteUrl("/"),
   telephone: "+34 943 42 82 24",
   email: site.email,
-  image: "/brand/logo-horizontal.svg",
+  image: absoluteUrl("/brand/logo-horizontal.svg"),
+  medicalSpecialty: "Dentistry",
   hasMap: site.mapsHref,
   address: {
     "@type": "PostalAddress",
@@ -58,6 +104,7 @@ const structuredData = {
     latitude: 43.3181303,
     longitude: -1.9824521,
   },
+  openingHoursSpecification,
 };
 
 export default function RootLayout({

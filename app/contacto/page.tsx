@@ -1,20 +1,25 @@
 import type { Metadata } from "next";
 import { Atmosphere } from "@/components/Atmosphere";
 import { ContactForm } from "@/components/ContactForm";
-import { site } from "@/lib/site";
+import { pageOpenGraph } from "@/lib/seo";
+import { absoluteUrl, assetUrl, site } from "@/lib/site";
 import styles from "./page.module.css";
+
+const description =
+  "Pide cita en la clínica dental del doctor Javier Giménez Turrillas. Teléfono 943 42 82 24 o escribe a consulta@javiergimenezturrillas.com.";
 
 export const metadata: Metadata = {
   title: "Pedir cita y contacto",
-  description:
-    "Pide cita en la clínica dental del doctor Javier Giménez Turrillas. Teléfono 943 42 82 24 o escribe a consulta@javiergimenezturrillas.com.",
+  description,
+  alternates: { canonical: absoluteUrl("/contacto/") },
+  openGraph: pageOpenGraph("/contacto/", "Pedir cita y contacto", description),
 };
 
 export default function ContactoPage() {
   return (
     <>
       <section className={styles.hero} aria-labelledby="contacto-hero-title">
-        <Atmosphere src="/images/bg-contact.jpg" priority overlay="strong" />
+        <Atmosphere src={assetUrl("/images/bg-contact.jpg")} priority overlay="strong" />
         <div className={`container ${styles.heroCopy}`}>
           <h1 id="contacto-hero-title">Pedir cita</h1>
           <p className={`${styles.heroLead} prose-measure`}>
@@ -142,7 +147,7 @@ export default function ContactoPage() {
         className={`${styles.section} ${styles.sectionAtmosphere}`}
         aria-label="Cierre de contacto"
       >
-        <Atmosphere src="/images/bg-contact.jpg" overlay="strong" />
+        <Atmosphere src={assetUrl("/images/bg-contact.jpg")} overlay="strong" />
         <div className={`container ${styles.closing}`}>
           <p>
             Si prefieres hablarlo en persona, llama y te ayudamos a concertar la

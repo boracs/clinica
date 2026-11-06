@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Atmosphere } from "@/components/Atmosphere";
-import { site } from "@/lib/site";
+import { assetUrl, site } from "@/lib/site";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title:
-    "Clínica dental · Javier Giménez Turrillas · San Sebastián-Donostia",
+    "Clínica dental Javier Giménez · Donostia",
   description:
     "Clínica dental del doctor Javier Giménez Turrillas en San Sebastián-Donostia. Pide cita por teléfono o escribe un mensaje.",
 };
@@ -17,7 +17,7 @@ export default function HomePage() {
     <>
       <section className={styles.hero} aria-labelledby="home-hero-title">
         <Atmosphere
-          src="/images/bg-home-hero.jpg"
+          src={assetUrl("/images/bg-home-hero.jpg")}
           priority
           overlay="left"
         />
@@ -42,7 +42,7 @@ export default function HomePage() {
 
           <figure className={styles.photoBlock}>
             <Image
-              src="/images/clinic-generic.jpg"
+              src={assetUrl("/images/clinic-generic.jpg")}
               alt="Gabinete dental moderno y luminoso"
               width={1200}
               height={900}
@@ -88,7 +88,7 @@ export default function HomePage() {
         className={`${styles.section} ${styles.sectionAtmosphere}`}
         aria-labelledby="home-reparo-title"
       >
-        <Atmosphere src="/images/bg-home-calm.jpg" overlay="soft" />
+        <Atmosphere src={assetUrl("/images/bg-home-calm.jpg")} overlay="soft" />
         <div className={`container ${styles.sectionCentered}`}>
           <span className="section-label">Primera visita</span>
           <h2 id="home-reparo-title">Puedes venir solo a preguntar</h2>
@@ -159,7 +159,7 @@ export default function HomePage() {
         <div className={`container ${styles.doctorSplit}`}>
           <figure className={styles.photoBlock}>
             <Image
-              src="/images/doctor-generic.jpg"
+              src={assetUrl("/images/doctor-generic.jpg")}
               alt="Dentista atendiendo a un paciente en el gabinete, visto de espalda"
               width={1200}
               height={900}

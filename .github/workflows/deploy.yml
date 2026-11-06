@@ -1,0 +1,54 @@
+name: Deploy a GitHub Pages
+
+on:
+  # Se despliega al hacer push a la rama principal.
+  push:
+    branches: ["main"]
+  # Permite lanzarlo a mano desde la pestaña "Actions".
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Evita que dos despliegues se pisen entre sí.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # URL base para la prueba en GitHub Pages (project site).
+      # El basePath se deriva solo de esta variable (next.config.ts).
+      # Cuando pases al dominio definitivo, cambia esto por:
+      #   NEXT_PUBLIC_SITE_URL: https://www.javiergimenezturrillas.com
+      - run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
