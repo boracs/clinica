@@ -7,19 +7,27 @@ Notas de DESPLIEGUE y PENDIENTES
 1. DESPLIEGUE
 --------------------------------------------------------------------------------
 
-A) PRUEBA EN GITHUB PAGES (ahora)
-   1. Sube el proyecto a un repositorio en GitHub.
-   2. En Settings -> Pages -> Build and deployment, elige
-      "Source: GitHub Actions".
-   3. Haz push a la rama "main". El workflow .github/workflows/deploy.yml
-      compila y publica solo.
-      URL final: https://TU-USUARIO.github.io/TU-REPO/
+A) PRUEBA EN GITHUB PAGES (HECHO — 2026-11-06)
+   - Repositorio: https://github.com/boracs/clinica
+   - Web publicada: https://boracs.github.io/clinica/
+   - Source de Pages: GitHub Actions (workflow .github/workflows/deploy.yml).
+   - Cada push a "main" recompila y republica automáticamente.
 
-   IMPORTANTE:
-   - Si tu rama no se llama "main" (por ejemplo "master"), cambia la línea
-     "branches: [main]" dentro de .github/workflows/deploy.yml.
-   - La URL base y el basePath se calculan solos a partir del nombre del
-     repositorio. NO hay que tocar nada más.
+B) DOMINIO DEFINITIVO (más adelante)
+   - Dominio: https://www.javiergimenezturrillas.com
+   - Opción 1 (GitHub Pages con dominio propio): vincula el dominio en
+     Settings -> Pages, y en deploy.yml cambia:
+         NEXT_PUBLIC_SITE_URL: https://www.javiergimenezturrillas.com
+     Después haz push; el basePath se vacía automáticamente.
+   - Opción 2 (hosting propio cPanel/Apache): compila con esa misma variable
+     y sube el contenido de la carpeta "out/" al servidor.
+
+C) AVISO IMPORTANTE SOBRE EL FORMULARIO DE CONTACTO
+   - GitHub Pages es estático (sin PHP ni servidor), por lo que el formulario
+     de contacto NO puede enviar mensajes allí. Sirve solo como prueba visual.
+   - El envío real se configura cuando esté en el servidor definitivo (cPanel)
+     usando public/contacto.php. Hay que poner FORM_DEMO_MODE = false en
+     components/ContactForm.tsx (ahora está en "true", modo demo).
 
 B) DOMINIO DEFINITIVO (más adelante)
    - Dominio: https://www.javiergimenezturrillas.com
