@@ -6,8 +6,7 @@ import { assetUrl, site } from "@/lib/site";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title:
-    "Clínica dental Javier Giménez · Donostia",
+  title: "Clínica dental Javier Giménez · Donostia",
   description:
     "Clínica dental del doctor Javier Giménez Turrillas en San Sebastián-Donostia. Pide cita por teléfono o escribe un mensaje.",
 };
@@ -17,9 +16,10 @@ export default function HomePage() {
     <>
       <section className={styles.hero} aria-labelledby="home-hero-title">
         <Atmosphere
-          src={assetUrl("/images/bg-home-hero.jpg")}
+          src={assetUrl("/images/illustration-hero.svg")}
           priority
           overlay="left"
+          parallax
         />
         <div className={`container ${styles.heroGrid}`}>
           <div className={styles.heroCopy}>
@@ -88,7 +88,11 @@ export default function HomePage() {
         className={`${styles.section} ${styles.sectionAtmosphere}`}
         aria-labelledby="home-reparo-title"
       >
-        <Atmosphere src={assetUrl("/images/bg-home-calm.jpg")} overlay="soft" />
+        <Atmosphere
+          src={assetUrl("/images/bg-home-calm.jpg")}
+          overlay="soft"
+          parallax
+        />
         <div className={`container ${styles.sectionCentered}`}>
           <span className="section-label">Primera visita</span>
           <h2 id="home-reparo-title">Puedes venir solo a preguntar</h2>
@@ -97,6 +101,14 @@ export default function HomePage() {
             miramos, te explicamos y dejas las dudas sobre la mesa. Tú decides
             el siguiente paso.
           </p>
+          <p>
+            Te recibimos, hablamos de lo que te preocupa y hacemos la revisión.
+            Si hace falta un plan de tratamiento, lo repasamos contigo antes de
+            seguir.
+          </p>
+          <p className={`pending-note ${styles.gapNote}`}>
+            Duración de la visita: pendiente de confirmar.
+          </p>
           <div className={`btn-group ${styles.centeredActions}`}>
             <Link href="/contacto" className="btn btn--primary">
               Pedir cita
@@ -104,6 +116,46 @@ export default function HomePage() {
             <a href={site.emailHref} className="btn btn--secondary">
               Escribir
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="sobre-nosotros"
+        className={`${styles.section} ${styles.sectionDoctor}`}
+        aria-labelledby="home-doctor-title"
+      >
+        <div className={`container ${styles.doctorSplit}`}>
+          <figure className={styles.photoBlock}>
+            <Image
+              src={assetUrl("/images/doctor-generic.jpg")}
+              alt="Dentista atendiendo a un paciente en el gabinete, visto de espalda"
+              width={1200}
+              height={900}
+              className={styles.photo}
+              sizes="(min-width: 768px) 46vw, 100vw"
+            />
+            <figcaption className={styles.photoLabel}>
+              Atención en el gabinete · Foto del doctor: pendiente
+            </figcaption>
+          </figure>
+          <div className={styles.doctorCopy}>
+            <span className="section-label">Sobre nosotros</span>
+            <h2 id="home-doctor-title">Doctor Javier Giménez Turrillas</h2>
+            <p>
+              Te atiende el doctor Javier Giménez Turrillas. El objetivo es que
+              entiendas qué ocurre en tu boca y qué opciones tienes, sin prisas
+              y sin tecnicismos de más.
+            </p>
+            <ul className={styles.pendingList}>
+              <li>Número de colegiado: pendiente</li>
+              <li>Formación / trayectoria: pendiente</li>
+            </ul>
+            <div className={styles.actions}>
+              <Link href="/contacto" className="btn btn--primary">
+                Pedir cita
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -149,44 +201,19 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section
-        className={`${styles.section} ${styles.sectionDoctor}`}
-        aria-labelledby="home-bridge-title"
-      >
-        <div className={`container ${styles.doctorSplit}`}>
-          <figure className={styles.photoBlock}>
+          <figure className={`${styles.photoBlock} ${styles.locationPhoto}`}>
             <Image
-              src={assetUrl("/images/doctor-generic.jpg")}
-              alt="Dentista atendiendo a un paciente en el gabinete, visto de espalda"
+              src={assetUrl("/images/portal-clinica.png")}
+              alt="Portal de acceso a Calle Loyola, 15, San Sebastián-Donostia"
               width={1200}
               height={900}
               className={styles.photo}
-              sizes="(min-width: 768px) 46vw, 100vw"
+              sizes="(min-width: 768px) 60vw, 100vw"
             />
             <figcaption className={styles.photoLabel}>
-              Atención en el gabinete · Foto del doctor: pendiente
+              Entrada · Calle Loyola, 15
             </figcaption>
           </figure>
-          <div className={styles.doctorCopy}>
-            <span className="section-label">El doctor</span>
-            <h2 id="home-bridge-title">Quién te atiende</h2>
-            <p>
-              La clínica la dirige el doctor Javier Giménez Turrillas. Si
-              quieres saber cómo trabajamos y qué esperar al llegar, está en{" "}
-              <Link href="/sobre-nosotros" className="text-link">
-                Sobre nosotros
-              </Link>
-              .
-            </p>
-            <div className={styles.actions}>
-              <Link href="/sobre-nosotros" className="btn btn--secondary">
-                Ver cómo trabajamos
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
     </>

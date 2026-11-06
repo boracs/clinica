@@ -19,7 +19,12 @@ export default function ContactoPage() {
   return (
     <>
       <section className={styles.hero} aria-labelledby="contacto-hero-title">
-        <Atmosphere src={assetUrl("/images/bg-contact.jpg")} priority overlay="strong" />
+        <Atmosphere
+          src={assetUrl("/images/bg-contact.jpg")}
+          priority
+          overlay="strong"
+          parallax
+        />
         <div className={`container ${styles.heroCopy}`}>
           <h1 id="contacto-hero-title">Pedir cita</h1>
           <p className={`${styles.heroLead} prose-measure`}>

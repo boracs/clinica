@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" fill="none" role="presentation" aria-hidden="true">
+  <defs>
+    <radialGradient id="gTeal" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#115E59" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#115E59" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gWarm" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C4A574" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#C4A574" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Halos suaves -->
+  <circle cx="1180" cy="140" r="360" fill="url(#gTeal)"/>
+  <circle cx="180" cy="730" r="320" fill="url(#gWarm)"/>
+  <circle cx="760" cy="110" r="230" fill="url(#gWarm)" opacity="0.7"/>
+
+  <!-- Ondas -->
+  <path d="M0 620 C240 540 480 700 720 620 S1200 540 1440 640" stroke="#115E59" stroke-opacity="0.10" stroke-width="2"/>
+  <path d="M0 660 C260 590 520 740 760 660 S1240 590 1440 680" stroke="#C4A574" stroke-opacity="0.14" stroke-width="2"/>
+  <path d="M0 700 C300 640 560 780 800 700 S1280 640 1440 720" stroke="#115E59" stroke-opacity="0.08" stroke-width="2"/>
+
+  <!-- Puntos -->
+  <circle cx="1180" cy="420" r="6" fill="#C4A574" fill-opacity="0.5"/>
+  <circle cx="1240" cy="470" r="3" fill="#115E59" fill-opacity="0.35"/>
+  <circle cx="210" cy="240" r="4" fill="#115E59" fill-opacity="0.3"/>
+  <circle cx="300" cy="120" r="5" fill="#C4A574" fill-opacity="0.4"/>
+  <circle cx="980" cy="600" r="4" fill="#115E59" fill-opacity="0.25"/>
+
+  <!-- Diente (marca de agua) -->
+  <g transform="translate(1160 600) scale(0.9)" opacity="0.12" fill="#115E59">
+    <path d="M60 16 C44 16 30 30 30 52 L30 72 C30 86 22 96 12 100 C8 102 6 106 7 110 C8 115 13 118 18 115 C26 111 33 104 38 96 L42 88 C47 78 73 78 78 88 L82 96 C87 104 94 111 102 115 C107 118 112 115 113 110 C114 106 112 102 108 100 C98 96 90 86 90 72 L90 52 C90 30 76 16 60 16 Z"/>
+  </g>
+</svg>

@@ -18,6 +18,34 @@ function isCurrentPath(pathname: string, href: string) {
   return normalizePath(pathname) === normalizePath(href);
 }
 
+type NavItemProps = {
+  href: string;
+  label: string;
+  className: string;
+  current: boolean;
+  onClick?: () => void;
+};
+
+/**
+ * Los enlaces con ancla (`#`) se renderizan como <a> para que el scroll
+ * nativo al ancla funcione siempre, también al venir de otra ruta.
+ */
+function NavItem({ href, label, className, current, onClick }: NavItemProps) {
+  const ariaCurrent = current ? ("page" as const) : undefined;
+  if (href.includes("#")) {
+    return (
+      <a href={href} className={className} aria-current={ariaCurrent} onClick={onClick}>
+        {label}
+      </a>
+    );
+  }
+  return (
+    <Link href={href} className={className} aria-current={ariaCurrent} onClick={onClick}>
+      {label}
+    </Link>
+  );
+}
+
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -44,16 +72,13 @@ export function Header() {
 
         <nav className={styles.nav} aria-label="Principal">
           {navLinks.map((link) => (
-            <Link
+            <NavItem
               key={link.href}
               href={link.href}
+              label={link.label}
               className={styles.navLink}
-              aria-current={
-                isCurrentPath(pathname, link.href) ? "page" : undefined
-              }
-            >
-              {link.label}
-            </Link>
+              current={isCurrentPath(pathname, link.href)}
+            />
           ))}
         </nav>
 
@@ -85,17 +110,14 @@ export function Header() {
         <div id={menuId} className={`${styles.mobilePanel} ${styles.mobilePanelOpen}`}>
           <nav className={styles.mobileNav} aria-label="Menú">
             {navLinks.map((link) => (
-              <Link
+              <NavItem
                 key={link.href}
                 href={link.href}
+                label={link.label}
                 className={styles.mobileNavLink}
-                aria-current={
-                  isCurrentPath(pathname, link.href) ? "page" : undefined
-                }
+                current={isCurrentPath(pathname, link.href)}
                 onClick={closeMenu}
-              >
-                {link.label}
-              </Link>
+              />
             ))}
           </nav>
         </div>

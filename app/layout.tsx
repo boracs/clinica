@@ -3,6 +3,7 @@ import { Source_Sans_3, Source_Serif_4 } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { MobileCtaBar } from "@/components/MobileCtaBar";
+import { SocialRail } from "@/components/SocialRail";
 import { pageOpenGraph } from "@/lib/seo";
 import { absoluteUrl, assetUrl, site, siteDescription, siteUrl } from "@/lib/site";
 import "./globals.css";
@@ -125,6 +126,7 @@ export default function RootLayout({
         <a className="skip-link" href="#contenido">
           Ir al contenido
         </a>
+        <SocialRail />
         <div className="site-shell">
           <Header />
           <main id="contenido" className="site-main" tabIndex={-1}>

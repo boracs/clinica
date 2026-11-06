@@ -34,8 +34,18 @@ export const site = {
 
 export const navLinks = [
   { href: "/", label: "Inicio" },
-  { href: "/sobre-nosotros", label: "Sobre nosotros" },
+  { href: "/#sobre-nosotros", label: "Sobre nosotros" },
   { href: "/contacto", label: "Contacto" },
+] as const;
+
+/**
+ * Redes sociales de la barra lateral.
+ * TODO: sustituir `href: "#"` por las URLs reales de las cuentas
+ * (el icono queda como marcador mientras tanto).
+ */
+export const socialLinks = [
+  { id: "instagram", label: "Instagram", href: "#" },
+  { id: "facebook", label: "Facebook", href: "#" },
 ] as const;
 
 /**

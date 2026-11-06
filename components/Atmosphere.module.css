@@ -11,6 +11,10 @@
   object-position: center;
 }
 
+.parallax .image {
+  will-change: transform;
+}
+
 .overlay {
   position: absolute;
   inset: 0;
