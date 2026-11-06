@@ -1,5 +1,5 @@
 ================================================================================
-CLÍNICA DENTAL JAVIER GIMÉNEZ TURRILLAS
+DOCTOR BOLAO
 Notas de DESPLIEGUE y PENDIENTES
 ================================================================================
 
@@ -14,10 +14,10 @@ A) PRUEBA EN GITHUB PAGES (HECHO — 2026-11-06)
    - Cada push a "main" recompila y republica automáticamente.
 
 B) DOMINIO DEFINITIVO (más adelante)
-   - Dominio: https://www.javiergimenezturrillas.com
+   - Dominio: https://www.doctorbolao.com
    - Opción 1 (GitHub Pages con dominio propio): vincula el dominio en
      Settings -> Pages, y en deploy.yml cambia:
-         NEXT_PUBLIC_SITE_URL: https://www.javiergimenezturrillas.com
+         NEXT_PUBLIC_SITE_URL: https://www.doctorbolao.com
      Después haz push; el basePath se vacía automáticamente.
    - Opción 2 (hosting propio cPanel/Apache): compila con esa misma variable
      y sube el contenido de la carpeta "out/" al servidor.
@@ -30,10 +30,10 @@ C) AVISO IMPORTANTE SOBRE EL FORMULARIO DE CONTACTO
      components/ContactForm.tsx (ahora está en "true", modo demo).
 
 B) DOMINIO DEFINITIVO (más adelante)
-   - Dominio: https://www.javiergimenezturrillas.com
+   - Dominio: https://www.doctorbolao.com
    - Opción 1 (GitHub Pages con dominio propio): vincula el dominio en
      Settings -> Pages, y en deploy.yml cambia:
-         NEXT_PUBLIC_SITE_URL: https://www.javiergimenezturrillas.com
+         NEXT_PUBLIC_SITE_URL: https://www.doctorbolao.com
    - Opción 2 (hosting propio cPanel/Apache): compila con esa misma variable
      y sube el contenido de la carpeta "out/" al servidor.
    - Al ser una URL en la raíz, el basePath queda vacío automáticamente.
@@ -51,12 +51,12 @@ C) AVISO IMPORTANTE SOBRE EL FORMULARIO DE CONTACTO
 
 - NEXT_PUBLIC_SITE_URL
     URL base para canonical, sitemap, robots y Open Graph.
-    - Por defecto: https://www.javiergimenezturrillas.com
+    - Por defecto: https://www.doctorbolao.com
     - GitHub Pages: https://TU-USUARIO.github.io/TU-REPO
     El basePath se deriva automáticamente de esta variable.
 
 - CONTACT_TO (opcional)
-    Destinatario del formulario. Por defecto consulta@javiergimenezturrillas.com
+    Destinatario del formulario. Por defecto consulta@doctorbolao.com
 
 - CONTACT_MAIL_MODE=log (solo desarrollo)
     Valida y registra en consola, sin enviar correo real.

@@ -6,7 +6,7 @@ import { absoluteUrl, assetUrl, site } from "@/lib/site";
 import styles from "./page.module.css";
 
 const description =
-  "Pide cita en la clínica dental del doctor Javier Giménez Turrillas. Teléfono 943 42 82 24 o escribe a consulta@javiergimenezturrillas.com.";
+  "Pide cita en Doctor bolao. Teléfono 943 42 82 24 o escribe un mensaje.";
 
 export const metadata: Metadata = {
   title: "Pedir cita y contacto",

@@ -6,7 +6,7 @@ Copia el bloque siguiente y ejecútalo con un agente que tenga acceso al reposit
 Rol: auditor senior de diseño, UX y frontend de una web de clínica dental local en España.
 
 Objetivo
-Auditar a fondo la web de la Clínica dental del doctor Javier Giménez Turrillas. Detecta TODO lo mejorable. No reescribas la web ni implementes fixes; solo audita. Si más adelante piden correcciones, será en otro encargo.
+Auditar a fondo la web de la Doctor bolao. Detecta TODO lo mejorable. No reescribas la web ni implementes fixes; solo audita. Si más adelante piden correcciones, será en otro encargo.
 
 Proyecto
 - Ruta del repo: el workspace actual de la clínica.

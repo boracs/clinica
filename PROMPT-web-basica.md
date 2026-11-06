@@ -3,20 +3,20 @@
 Copia todo el bloque de abajo y pégalo en el chat cuando quieras que construya la web de una vez.
 
 ```
-Quiero que construyas ahora la web básica de la Clínica dental del doctor Javier Giménez Turrillas.
+Quiero que construyas ahora la web básica de la Doctor bolao.
 
 ## Datos reales (usar sí o sí)
-- Nombre: Clínica dental del doctor Javier Giménez Turrillas
+- Nombre: Doctor bolao
 - Dirección: Calle Loyola, 15 1 Dcha, 20005 San Sebastián-Donostia, SS
 - Teléfono: 943 42 82 24
-- Email: consulta@javiergimenezturrillas.com
+- Email: consulta@doctorbolao.com
 
 No inventes horarios, WhatsApp, fotos, equipo, tratamientos concretos, precios ni número de colegiado. Esos quedan como pendientes con hueco visible.
 
 ## Cómo trabajar
 1. Si no existen, crea primero estos dos agentes del proyecto con el subagente arquitecto-agentes:
    - frontend: Next.js + TypeScript + CSS, accesibilidad, móvil primero, componentes limpios.
-   - backend: rutas API, formulario de contacto, validación, envío seguro hacia consulta@javiergimenezturrillas.com, sin inventar servicios ni secretos.
+   - backend: rutas API, formulario de contacto, validación, envío seguro hacia consulta@doctorbolao.com, sin inventar servicios ni secretos.
 2. Usa el subagente marketing-diseno-clinica para decidir diseño, paleta, tipografía, jerarquía, botones y todos los textos.
 3. Usa el subagente frontend para implementar las páginas.
 4. Usa el subagente backend solo para lo necesario del contacto (API del formulario). No montes login, panel ni base de datos de pacientes.
@@ -33,7 +33,7 @@ Una web sencilla y profesional con exactamente estas páginas:
 
 2. Sobre nosotros (`/sobre-nosotros`)
    - Quiénes sois, enfoque de la clínica y trato al paciente en San Sebastián-Donostia.
-   - El doctor Javier Giménez Turrillas como figura principal, sin inventar biografía.
+   - El Doctor bolao como figura principal, sin inventar biografía.
    - Huecos visibles para foto del equipo y datos profesionales pendientes.
    - Tono cercano y profesional, sin eslóganes vacíos.
 

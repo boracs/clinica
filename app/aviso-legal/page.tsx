@@ -4,7 +4,7 @@ import { pageOpenGraph } from "@/lib/seo";
 import { absoluteUrl, site } from "@/lib/site";
 
 const description =
-  "Aviso legal de la clínica dental del doctor Javier Giménez Turrillas en San Sebastián-Donostia.";
+  "Aviso legal de Doctor bolao en San Sebastián-Donostia.";
 
 export const metadata: Metadata = {
   title: "Aviso legal",

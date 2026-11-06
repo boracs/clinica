@@ -46,7 +46,7 @@ La URL queda como `https://TU-USUARIO.github.io/TU-REPO/`. No hace falta tocar n
 Cuando pases al dominio real, cambia en `.github/workflows/deploy.yml` (o en el `env` del build) la variable:
 
 ```
-NEXT_PUBLIC_SITE_URL=https://www.javiergimenezturrillas.com
+NEXT_PUBLIC_SITE_URL=https://www.doctorbolao.com
 ```
 
 El `basePath` queda vacío automáticamente al ser una URL en la raíz.

@@ -1,4 +1,4 @@
-# Diseño y textos — Clínica dental del doctor Javier Giménez Turrillas
+# Diseño y textos — Doctor bolao
 
 Documento listo para implementar. No inventa datos. Lo confirmado está cerrado; lo que falta aparece como pendiente con hueco visible.
 
@@ -100,9 +100,9 @@ Fotos reales de la clínica y del doctor cuando existan. Mientras no: bloque de 
 
 Una sola `h1` por página. Títulos de pestaña:
 
-- Home: `Clínica dental Javier Giménez · Donostia`
-- Sobre nosotros: `Sobre nosotros · Clínica Giménez Turrillas · Donostia`
-- Contacto: `Pedir cita y contacto · Clínica Giménez Turrillas · Donostia`
+- Home: `Clínica dental Doctor bolao · Donostia`
+- Sobre nosotros: `Sobre nosotros · Doctor bolao · Donostia`
+- Contacto: `Pedir cita y contacto · Doctor bolao · Donostia`
 
 ---
 
@@ -114,8 +114,8 @@ Una sola `h1` por página. Títulos de pestaña:
 - Sobre nosotros
 - Contacto
 
-Nombre en cabecera (versión corta): **Clínica dental Javier Giménez Turrillas**  
-(En móvil estrecho puede truncarse a **Dr. Javier Giménez Turrillas** si no cabe; el nombre completo sigue en el hero y el pie.)
+Nombre en cabecera (versión corta): **Doctor bolao**  
+(En móvil estrecho puede truncarse a **Doctor bolao** si no cabe; el nombre completo sigue en el hero y el pie.)
 
 ### 2.2 Etiquetas de botones y CTAs (cerrar así)
 
@@ -123,7 +123,7 @@ Nombre en cabecera (versión corta): **Clínica dental Javier Giménez Turrillas
 |---|---|
 | **Pedir cita** | `/contacto` (CTA principal del sitio) |
 | **Llamar** | `tel:+34943428224` · texto visible: `943 42 82 24` |
-| **Escribir** | `mailto:consulta@javiergimenezturrillas.com` · texto visible del email cuando acompañe |
+| **Escribir** | `mailto:consulta@doctorbolao.com` · texto visible del email cuando acompañe |
 | **Cómo llegar** | enlace a mapas con la dirección (cuando se implemente; la dirección es real) |
 | **Ver cómo trabajamos** | `/sobre-nosotros` |
 | **Ir a contacto** | `/contacto` (secundario, si hace falta diferenciar del primario) |
@@ -133,7 +133,7 @@ Nombre en cabecera (versión corta): **Clínica dental Javier Giménez Turrillas
 Datos reales en CTAs secundarios:
 
 - Teléfono: **943 42 82 24**
-- Email: **consulta@javiergimenezturrillas.com**
+- Email: **consulta@doctorbolao.com**
 
 WhatsApp: no hay número confirmado → no mostrar botón WhatsApp.
 
@@ -143,19 +143,19 @@ WhatsApp: no hay número confirmado → no mostrar botón WhatsApp.
 
 ### Meta
 
-- **Title:** Clínica dental Javier Giménez · Donostia
-- **Description:** Clínica dental del doctor Javier Giménez Turrillas en San Sebastián-Donostia. Pide cita por teléfono o escribe un mensaje.
+- **Title:** Clínica dental Doctor bolao · Donostia
+- **Description:** Doctor bolao en San Sebastián-Donostia. Pide cita por teléfono o escribe un mensaje.
 
 ### Cabecera (compartida)
 
-- Marca: Clínica dental Javier Giménez Turrillas
+- Marca: Doctor bolao
 - CTA cabecera: Pedir cita
 
 ### Hero (primer pantallazo)
 
 - **h1:** Clínica dental en San Sebastián-Donostia
 - **Apoyo (1–2 frases):**  
-  Soy el doctor Javier Giménez Turrillas. Aquí te atienden con calma, te explican qué ven y puedes preguntar sin prisa.
+  Soy el Doctor bolao. Aquí te atienden con calma, te explican qué ven y puedes preguntar sin prisa.
 - **CTA primario:** Pedir cita
 - **CTA secundario:** Llamar
 - **Bloque imagen:** [Foto pendiente] — pie: «Foto pendiente»
@@ -185,22 +185,22 @@ WhatsApp: no hay número confirmado → no mostrar botón WhatsApp.
   Calle Loyola, 15 1 Dcha, 20005 San Sebastián-Donostia, SS
 - **Líneas de contacto:**  
   Teléfono: 943 42 82 24  
-  Email: consulta@javiergimenezturrillas.com
+  Email: consulta@doctorbolao.com
 - **CTA:** Cómo llegar · Pedir cita
 
 ### Sección puente — Conoce la clínica
 
 - **h2:** Quién te atiende
 - **Párrafo:**  
-  La clínica la dirige el doctor Javier Giménez Turrillas. Si quieres saber cómo trabajamos y qué esperar al llegar, está en Sobre nosotros.
+  La clínica la dirige el Doctor bolao. Si quieres saber cómo trabajamos y qué esperar al llegar, está en Sobre nosotros.
 - **CTA:** Ver cómo trabajamos
 
 ### Pie (compartido)
 
-- Clínica dental del doctor Javier Giménez Turrillas
+- Doctor bolao
 - Calle Loyola, 15 1 Dcha, 20005 San Sebastián-Donostia, SS
 - 943 42 82 24
-- consulta@javiergimenezturrillas.com
+- consulta@doctorbolao.com
 - Enlaces: Inicio · Sobre nosotros · Contacto
 - Legales (cuando existan): Aviso legal · Privacidad · Cookies
 - Hueco: Horario pendiente de confirmar
@@ -211,20 +211,20 @@ WhatsApp: no hay número confirmado → no mostrar botón WhatsApp.
 
 ### Meta
 
-- **Title:** Sobre nosotros · Clínica Giménez Turrillas · Donostia
-- **Description:** Conoce la clínica dental del doctor Javier Giménez Turrillas en San Sebastián-Donostia y cómo te atendemos.
+- **Title:** Sobre nosotros · Doctor bolao · Donostia
+- **Description:** Conoce la clínica dental del Doctor bolao en San Sebastián-Donostia y cómo te atendemos.
 
 ### Hero de página
 
 - **h1:** Sobre la clínica
 - **Párrafo:**  
-  Somos una clínica dental en San Sebastián-Donostia. El doctor Javier Giménez Turrillas dirige el cuidado de cada paciente con un trato cercano y explicaciones claras.
+  Somos una clínica dental en San Sebastián-Donostia. El Doctor bolao dirige el cuidado de cada paciente con un trato cercano y explicaciones claras.
 
 ### Sección — El doctor
 
-- **h2:** Doctor Javier Giménez Turrillas
+- **h2:** Doctor bolao
 - **Párrafo:**  
-  Te atiende el doctor Javier Giménez Turrillas. El objetivo es que entiendas qué ocurre en tu boca y qué opciones tienes, sin prisas y sin tecnicismos de más.
+  Te atiende el Doctor bolao. El objetivo es que entiendas qué ocurre en tu boca y qué opciones tienes, sin prisas y sin tecnicismos de más.
 - **Huecos visibles:**
   - [Foto pendiente] — pie: «Foto del doctor pendiente»
   - Número de colegiado: pendiente
@@ -261,8 +261,8 @@ WhatsApp: no hay número confirmado → no mostrar botón WhatsApp.
 
 ### Meta
 
-- **Title:** Pedir cita y contacto · Clínica Giménez Turrillas · Donostia
-- **Description:** Pide cita en la clínica dental del doctor Javier Giménez Turrillas. Teléfono 943 42 82 24 o escribe a consulta@javiergimenezturrillas.com.
+- **Title:** Pedir cita y contacto · Doctor bolao · Donostia
+- **Description:** Pide cita en la clínica dental del Doctor bolao. Teléfono 943 42 82 24 o escribe a consulta@doctorbolao.com.
 
 ### Hero de página
 
@@ -275,7 +275,7 @@ WhatsApp: no hay número confirmado → no mostrar botón WhatsApp.
 - **h2:** Teléfono y email
 - **Ítems:**
   - Llamar: 943 42 82 24 → `tel:+34943428224`
-  - Escribir: consulta@javiergimenezturrillas.com → `mailto:consulta@javiergimenezturrillas.com`
+  - Escribir: consulta@doctorbolao.com → `mailto:consulta@doctorbolao.com`
 - **CTA primario en zona:** Llamar  
 - **CTA secundario:** Escribir
 - **Hueco:** WhatsApp: pendiente (no mostrar botón hasta tener número)

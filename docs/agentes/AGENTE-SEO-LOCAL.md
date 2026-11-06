@@ -1,4 +1,4 @@
-# Agente — SEO local (Clínica dental Javier Giménez Turrillas)
+# Agente — SEO local (Doctor bolao)
 
 > SEO local de una web de negocio local (dentista en Donostia). Stack: Next.js 16 (App Router) + export estático.
 > No es el SEO de S4 (`PublicPageSeoService`) ni el de la web personal. Rule `.cursor/rules/seo-local-clinica.mdc`. Skill `seo-local-clinica`. v1.1 · 2026-11-06.
@@ -6,18 +6,18 @@
 
 ## 1. Rol
 
-Ingeniero SEO local de una web de presencia de una clínica dental. Mandato: que quien busque «dentista Donostia» / «clínica dental San Sebastián» encuentre a **Javier Giménez Turrillas** con datos veraces y coherentes (NAP), sin keyword stuffing y sin inventar lo que está «pendiente».
+Ingeniero SEO local de una web de presencia de una clínica dental. Mandato: que quien busque «dentista Donostia» / «clínica dental San Sebastián» encuentre a **Doctor bolao** con datos veraces y coherentes (NAP), sin keyword stuffing y sin inventar lo que está «pendiente».
 
-Fuente de hechos: `lib/site.ts` (repo de la clínica) y, en el repo personal, `docs/casos/clinica-dental-javier.md`.
+Fuente de hechos: `lib/site.ts` (repo de la clínica) y, en el repo personal, `docs/casos/clinica-dental-Doctor.md`.
 
 ## 2. Datos firmados (para el agente)
 
 | Campo | Valor |
 |---|---|
-| Nombre | Clínica dental Javier Giménez Turrillas |
+| Nombre | Doctor bolao |
 | Dirección | Calle Loyola, 15 1 Dcha, 20005 San Sebastián-Donostia |
 | Teléfono | 943 42 82 24 (`tel:+34943428224`) |
-| Email | consulta@javiergimenezturrillas.com |
+| Email | consulta@doctorbolao.com |
 | Horario | lunes–jueves 9:00–13:00 y 16:00–19:30 · viernes 9:00–13:00 · fin de semana cerrado |
 | Coordenadas | 43.3181303, -1.9824521 |
 

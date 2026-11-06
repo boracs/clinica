@@ -4,7 +4,7 @@ import { pageOpenGraph } from "@/lib/seo";
 import { absoluteUrl, site } from "@/lib/site";
 
 const description =
-  "Política de cookies de la clínica dental del doctor Javier Giménez Turrillas en San Sebastián-Donostia.";
+  "Política de cookies de Doctor bolao en San Sebastián-Donostia.";
 
 export const metadata: Metadata = {
   title: "Política de cookies",
@@ -61,6 +61,10 @@ export default function CookiesPage() {
           </tr>
         </tbody>
       </table>
+      <p>
+        Las cookies analíticas de terceros solo se cargan si aceptas el aviso
+        de cookies; si lo rechazas, no se instalan.
+      </p>
 
       <h2>3. Cómo gestionar las cookies</h2>
       <p>

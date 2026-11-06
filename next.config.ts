@@ -4,7 +4,7 @@ import type { NextConfig } from "next";
 //   NEXT_PUBLIC_SITE_URL=https://USUARIO.github.io/REPO
 // Con dominio definitivo (raíz), el basePath queda vacío automáticamente.
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.javiergimenezturrillas.com";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.doctorbolao.com";
 
 let basePath = "";
 try {

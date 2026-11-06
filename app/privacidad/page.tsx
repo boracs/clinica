@@ -4,7 +4,7 @@ import { pageOpenGraph } from "@/lib/seo";
 import { absoluteUrl, site } from "@/lib/site";
 
 const description =
-  "Política de privacidad de la clínica dental del doctor Javier Giménez Turrillas en San Sebastián-Donostia.";
+  "Política de privacidad de Doctor bolao en San Sebastián-Donostia.";
 
 export const metadata: Metadata = {
   title: "Política de privacidad",

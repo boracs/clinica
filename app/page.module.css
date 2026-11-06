@@ -291,6 +291,12 @@
   max-width: 46ch;
 }
 
+@media (min-width: 768px) {
+  .sectionCentered p {
+    max-width: 62ch;
+  }
+}
+
 .centeredActions {
   margin-top: var(--space-2);
 }

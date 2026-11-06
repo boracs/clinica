@@ -137,14 +137,3 @@
   color: var(--color-success);
   font-weight: 600;
 }
-
-.statusError {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.5;
-  color: var(--color-error);
-}
-
-.statusError a {
-  font-weight: 600;
-}

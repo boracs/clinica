@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 180" role="img" aria-label="Clinica dental Javier Gimenez Turrillas">
-  <g transform="translate(8, 18) scale(0.72)">
-    <circle cx="100" cy="100" r="90" fill="none" stroke="#115E59" stroke-width="2.5"/>
-    <circle cx="100" cy="100" r="82" fill="none" stroke="#C4A574" stroke-width="1"/>
-    <path fill="#115E59" d="M76 52C76 40 86 34 100 34C114 34 124 40 124 52C124 62 122 70 118 78C114 88 110 94 108 104C106 114 110 124 116 134C108 130 102 120 100 110C98 120 92 130 84 134C90 124 94 114 92 104C90 94 86 88 82 78C78 70 76 62 76 52Z"/>
-    <path fill="#FFFFFF" opacity="0.3" d="M86 50C88 44 104 43 108 50C110 55 106 62 100 64C96 65 90 62 88 58C86 55 85 52 86 50Z"/>
-    <path fill="none" stroke="#C4A574" stroke-width="2.8" stroke-linecap="round" d="M48 148C64 134 80 126 100 126C120 126 136 134 152 148"/>
-    <path fill="none" stroke="#C4A574" stroke-width="1.5" stroke-linecap="round" opacity="0.65" d="M58 156C72 146 84 140 100 140C116 140 128 146 142 156"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 180" role="img" aria-label="Doctor bolao">
+  <g transform="translate(8, 10) scale(0.8)">
+    <path fill="#115E59" d="M100 42 C87 42 75 53 75 70 C75 87 82 98 86 110 L84 122 C84 129 90 133 95 129 L100 120 L105 129 C110 133 116 129 116 122 L114 110 C118 98 125 87 125 70 C125 53 113 42 100 42 Z"/>
+    <path fill="#FFFFFF" opacity="0.25" d="M82 60 C84 54 92 52 98 56 C101 59 100 65 96 68 C92 70 86 67 84 63 C82 60 82 58 82 60 Z"/>
+    <path fill="none" stroke="#C4A574" stroke-width="5" stroke-linecap="round" d="M58 156 C74 143 86 137 100 137 C114 137 126 143 142 156"/>
+    <path fill="none" stroke="#C4A574" stroke-width="2" stroke-linecap="round" opacity="0.6" d="M70 166 C82 158 90 154 100 154 C110 154 118 158 130 166"/>
   </g>
 
-  <g transform="translate(178, 24)">
-    <text x="0" y="64" fill="#163038" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="600" letter-spacing="0.015em">Gim&#233;nez Turrillas</text>
-    <line x1="0" y1="80" x2="158" y2="80" stroke="#C4A574" stroke-width="1.5"/>
+  <g transform="translate(150, 24)">
+    <text x="0" y="64" fill="#163038" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="600" letter-spacing="0.015em">Doctor bolao</text>
+    <line x1="0" y1="80" x2="210" y2="80" stroke="#C4A574" stroke-width="1.5"/>
     <text x="0" y="106" fill="#4E646B" font-family="'Segoe UI', system-ui, sans-serif" font-size="13" letter-spacing="0.16em">CL&#205;NICA DENTAL &#183; DONOSTIA</text>
   </g>
 </svg>

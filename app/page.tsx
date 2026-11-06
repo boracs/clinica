@@ -6,9 +6,9 @@ import { assetUrl, site } from "@/lib/site";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Clínica dental Javier Giménez · Donostia",
+  title: "Doctor bolao · Donostia",
   description:
-    "Clínica dental del doctor Javier Giménez Turrillas en San Sebastián-Donostia. Pide cita por teléfono o escribe un mensaje.",
+    "Doctor bolao en San Sebastián-Donostia. Pide cita por teléfono o escribe un mensaje.",
 };
 
 /**
@@ -59,8 +59,8 @@ export default function HomePage() {
               Clínica dental en San Sebastián-Donostia
             </h1>
             <p className={`${styles.heroLead} prose-measure`}>
-              Soy el doctor Javier Giménez Turrillas. Aquí te atienden con
-              calma, te explican qué ven y puedes preguntar sin prisa.
+              Aquí te atienden con calma, te explican qué ven y puedes
+              preguntar sin prisa.
             </p>
             <div className={`btn-group ${styles.heroActions}`}>
               <Link href="/contacto" className="btn btn--primary btn--block">
@@ -183,16 +183,15 @@ export default function HomePage() {
               sizes="(min-width: 768px) 46vw, 100vw"
             />
             <figcaption className={styles.photoLabel}>
-              El doctor Javier Giménez Turrillas en consulta
+              En consulta
             </figcaption>
           </figure>
           <div className={styles.doctorCopy}>
             <span className="section-label">Sobre nosotros</span>
-            <h2 id="home-doctor-title">Doctor Javier Giménez Turrillas</h2>
+            <h2 id="home-doctor-title">Doctor bolao</h2>
             <p>
-              Te atiende el doctor Javier Giménez Turrillas. El objetivo es que
-              entiendas qué ocurre en tu boca y qué opciones tienes, sin prisas
-              y sin tecnicismos de más.
+              En Doctor bolao queremos que entiendas qué ocurre en tu boca y
+              qué opciones tienes, sin prisas y sin tecnicismos de más.
             </p>
             <ul className={styles.credentials}>
               <li>N.º de colegiado: 2451 · Colegio de Odontólogos de Gipuzkoa</li>

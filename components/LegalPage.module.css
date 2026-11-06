@@ -1,9 +1,15 @@
 .hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   padding-block: var(--space-12);
-  background:
-    radial-gradient(1200px 480px at 12% -8%, rgb(197 165 116 / 0.08), transparent 60%),
-    var(--color-bg);
+  background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
+}
+
+.hero > :not(:first-child) {
+  position: relative;
+  z-index: 1;
 }
 
 @media (min-width: 768px) {

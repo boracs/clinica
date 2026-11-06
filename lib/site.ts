@@ -1,16 +1,16 @@
 export const site = {
-  nameFull: "Clínica dental del doctor Javier Giménez Turrillas",
-  nameShort: "Clínica dental Javier Giménez Turrillas",
-  nameMobile: "Dr. Javier Giménez Turrillas",
+  nameFull: "Doctor bolao",
+  nameShort: "Doctor bolao",
+  nameMobile: "Doctor bolao",
   address: "Calle Loyola, 15 1 Dcha, 20005 San Sebastián-Donostia, SS",
   phoneDisplay: "943 42 82 24",
   phoneHref: "tel:+34943428224",
-  email: "consulta@javiergimenezturrillas.com",
-  emailHref: "mailto:consulta@javiergimenezturrillas.com",
+  email: "consulta@doctorbolao.com",
+  emailHref: "mailto:consulta@doctorbolao.com",
   mapsHref:
-    "https://www.google.com/maps/place/Cl%C3%ADnica+Dental+Gim%C3%A9nez+Turrillas/@43.3181303,-1.9824521,17z/data=!4m6!3m5!1s0xd51a551217c07db:0xb424d1e8f71ea0a2!8m2!3d43.3181303!4d-1.9824521!16s%2Fg%2F11b6dk59hd",
+    "https://www.google.com/maps/search/?api=1&query=Calle+Loyola+15,+20005+San+Sebastián-Donostia",
   mapsEmbedSrc:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d725.5!2d-1.9824521!3d43.3181303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd51a551217c07db%3A0xb424d1e8f71ea0a2!2sCl%C3%ADnica%20Dental%20Gim%C3%A9nez%20Turrillas!5e0!3m2!1ses!2ses!4v1730840000000!5m2!1ses!2ses",
+    "https://maps.google.com/maps?q=Calle+Loyola+15,+20005+San+Sebastián-Donostia&output=embed",
   city: "San Sebastián-Donostia",
   hours: {
     summary:
@@ -47,12 +47,12 @@ export const socialLinks = [
   {
     id: "instagram",
     label: "Instagram",
-    href: "https://www.instagram.com/clinicadentaljaviergimenez",
+    href: "https://www.instagram.com/doctorbolao",
   },
   {
     id: "facebook",
     label: "Facebook",
-    href: "https://www.facebook.com/clinicadentaljaviergimenez",
+    href: "https://www.facebook.com/doctorbolao",
   },
 ] as const;
 
@@ -61,7 +61,7 @@ export const socialLinks = [
  * para probar en GitHub Pages antes de publicar en el dominio definitivo.
  */
 export const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.javiergimenezturrillas.com"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.doctorbolao.com"
 ).replace(/\/+$/, "");
 
 /** Ruta base (subdirectorio) derivada de `siteUrl`. Vacía en el dominio raíz. */
@@ -84,7 +84,7 @@ export function absoluteUrl(path = "/"): string {
 }
 
 export const siteDescription =
-  "Clínica dental del doctor Javier Giménez Turrillas en San Sebastián-Donostia. Pide cita por teléfono o escribe un mensaje.";
+  "Doctor bolao en San Sebastián-Donostia. Pide cita por teléfono o escribe un mensaje.";
 
 /**
  * Imagen Open Graph (compartir en WhatsApp/redes sociales).

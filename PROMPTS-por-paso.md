@@ -1,4 +1,4 @@
-# Prompts por paso — Clínica dental Javier Giménez Turrillas
+# Prompts por paso — Doctor bolao
 
 Usa un prompt por mensaje, en este orden. Copia solo el bloque de código de cada paso.
 
@@ -6,10 +6,10 @@ Usa un prompt por mensaje, en este orden. Copia solo el bloque de código de cad
 
 Usa siempre estos datos en todos los pasos. No inventes el resto.
 
-- Nombre: Clínica dental del doctor Javier Giménez Turrillas
+- Nombre: Doctor bolao
 - Dirección: Calle Loyola, 15 1 Dcha, 20005 San Sebastián-Donostia, SS
 - Teléfono: 943 42 82 24
-- Email: consulta@javiergimenezturrillas.com
+- Email: consulta@doctorbolao.com
 
 Pendiente todavía: horarios, WhatsApp, fotos, equipo, tratamientos concretos, precios, número de colegiado.
 
@@ -20,7 +20,7 @@ Pendiente todavía: horarios, WhatsApp, fotos, equipo, tratamientos concretos, p
 ```
 Usa el subagente arquitecto-agentes para crear un agente de proyecto llamado frontend.
 
-Debe especializarse en implementar la web de la Clínica dental del doctor Javier Giménez Turrillas con Next.js + TypeScript.
+Debe especializarse en implementar la web de la Doctor bolao con Next.js + TypeScript.
 
 Cuando lo invoquen:
 - Implementa páginas y componentes limpios, accesibles y mobile-first.
@@ -28,7 +28,7 @@ Cuando lo invoquen:
 - Usa estos datos reales siempre que haga falta contacto:
   - Dirección: Calle Loyola, 15 1 Dcha, 20005 San Sebastián-Donostia, SS
   - Teléfono: 943 42 82 24
-  - Email: consulta@javiergimenezturrillas.com
+  - Email: consulta@doctorbolao.com
 - No inventa horarios, WhatsApp, equipo, precios ni fotos.
 - Prefiere App Router, componentes reutilizables y CSS claro.
 - Revisa la UI en móvil y escritorio antes de dar por terminado.
@@ -43,11 +43,11 @@ Guárdalo en .cursor/agents/frontend.md y confirma la ruta al acabar.
 ```
 Usa el subagente arquitecto-agentes para crear un agente de proyecto llamado backend.
 
-Debe especializarse en la parte servidor de la web de la Clínica dental del doctor Javier Giménez Turrillas.
+Debe especializarse en la parte servidor de la web de la Doctor bolao.
 
 Cuando lo invoquen:
 - Crea solo lo necesario: rutas API, validación del formulario de contacto y envío seguro.
-- El destinatario real del contacto es consulta@javiergimenezturrillas.com.
+- El destinatario real del contacto es consulta@doctorbolao.com.
 - No monta login, panel de pacientes ni base de datos clínica.
 - No inventa servicios externos, claves API ni proveedores de email.
 - Si falta configuración real, deja huecos claros y variables de entorno de ejemplo.
@@ -63,12 +63,12 @@ Guárdalo en .cursor/agents/backend.md y confirma la ruta al acabar.
 ```
 Usa el subagente marketing-diseno-clinica.
 
-Necesito el sistema de diseño y los textos finales para una web básica de la Clínica dental del doctor Javier Giménez Turrillas con tres páginas: Home, Sobre nosotros y Contacto.
+Necesito el sistema de diseño y los textos finales para una web básica de la Doctor bolao con tres páginas: Home, Sobre nosotros y Contacto.
 
 Datos reales que debes usar sí o sí:
 - Dirección: Calle Loyola, 15 1 Dcha, 20005 San Sebastián-Donostia, SS
 - Teléfono: 943 42 82 24
-- Email: consulta@javiergimenezturrillas.com
+- Email: consulta@doctorbolao.com
 - Ciudad: San Sebastián-Donostia
 
 Entrégame, en español de España:
@@ -94,14 +94,14 @@ No construyas código todavía. Solo diseño + redacción listos para implementa
 ```
 Usa el subagente frontend.
 
-Implementa la página Home (`/`) de la Clínica dental del doctor Javier Giménez Turrillas en Next.js + TypeScript.
+Implementa la página Home (`/`) de la Doctor bolao en Next.js + TypeScript.
 
 Parte del sistema de diseño y textos definidos por marketing-diseno-clinica.
 
 Datos reales a mostrar donde corresponda:
 - Dirección: Calle Loyola, 15 1 Dcha, 20005 San Sebastián-Donostia, SS
 - Teléfono: 943 42 82 24
-- Email: consulta@javiergimenezturrillas.com
+- Email: consulta@doctorbolao.com
 
 La Home debe incluir:
 - Primer pantallazo: quiénes somos, qué ofrecemos y CTA claro de contacto/cita.
@@ -122,16 +122,16 @@ Al terminar:
 ```
 Usa el subagente frontend.
 
-Implementa la página Sobre nosotros (`/sobre-nosotros`) de la Clínica dental del doctor Javier Giménez Turrillas en Next.js + TypeScript.
+Implementa la página Sobre nosotros (`/sobre-nosotros`) de la Doctor bolao en Next.js + TypeScript.
 
 Usa el diseño y textos de marketing-diseno-clinica.
 
 La página debe incluir:
 - Quiénes sois y el enfoque de trato al paciente, anclado en San Sebastián-Donostia.
-- El doctor Javier Giménez Turrillas como figura principal, sin inventar biografía, años de experiencia ni número de colegiado.
+- El Doctor bolao como figura principal, sin inventar biografía, años de experiencia ni número de colegiado.
 - Bloques con huecos visibles para foto del equipo y datos profesionales pendientes.
 - Misma tipografía, color y botones que la Home.
-- CTA final hacia Contacto, más acceso a llamar (943 42 82 24) o escribir (consulta@javiergimenezturrillas.com).
+- CTA final hacia Contacto, más acceso a llamar (943 42 82 24) o escribir (consulta@doctorbolao.com).
 
 Al terminar, confirma archivos creados y que el enlace desde la Home funciona.
 ```
@@ -143,14 +143,14 @@ Al terminar, confirma archivos creados y que el enlace desde la Home funciona.
 ```
 Usa el subagente frontend.
 
-Implementa la página Contacto (`/contacto`) de la Clínica dental del doctor Javier Giménez Turrillas.
+Implementa la página Contacto (`/contacto`) de la Doctor bolao.
 
 Diseño moderno y profesional, coherente con Home y Sobre nosotros.
 
 Datos reales a mostrar sí o sí:
 - Dirección: Calle Loyola, 15 1 Dcha, 20005 San Sebastián-Donostia, SS
 - Teléfono: 943 42 82 24 (enlace tel:)
-- Email: consulta@javiergimenezturrillas.com (enlace mailto:)
+- Email: consulta@doctorbolao.com (enlace mailto:)
 
 Debe incluir:
 - Formulario: nombre, email, teléfono, mensaje.
@@ -171,12 +171,12 @@ Al terminar, confirma la ruta de la página y de los componentes del formulario.
 ```
 Usa el subagente backend.
 
-Crea la parte servidor del formulario de contacto de la Clínica dental del doctor Javier Giménez Turrillas.
+Crea la parte servidor del formulario de contacto de la Doctor bolao.
 
 Alcance exacto:
 - Endpoint API para recibir nombre, email, teléfono y mensaje.
 - Validación en servidor.
-- Destinatario previsto: consulta@javiergimenezturrillas.com.
+- Destinatario previsto: consulta@doctorbolao.com.
 - Respuestas claras de éxito y error.
 - Variables de entorno de ejemplo para el envío real (sin inventar proveedor ni claves).
 - Instrucciones breves de qué hay que configurar para que el correo o la notificación funcionen de verdad.
@@ -193,12 +193,12 @@ Al terminar, indica:
 ## 8. Revisión final conjunta
 
 ```
-Haz una revisión final de la web de la Clínica dental del doctor Javier Giménez Turrillas.
+Haz una revisión final de la web de la Doctor bolao.
 
 Datos reales que deben aparecer bien:
 - Dirección: Calle Loyola, 15 1 Dcha, 20005 San Sebastián-Donostia, SS
 - Teléfono: 943 42 82 24
-- Email: consulta@javiergimenezturrillas.com
+- Email: consulta@doctorbolao.com
 
 Usa, en este orden:
 1. marketing-diseno-clinica: revisar textos, jerarquía, contraste, CTAs y tono.

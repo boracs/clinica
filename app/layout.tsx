@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Source_Sans_3, Source_Serif_4 } from "next/font/google";
+import { Analytics } from "@/components/Analytics";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -24,14 +25,14 @@ const sourceSerif = Source_Serif_4({
 });
 
 const defaultTitle =
-  "Clínica dental Javier Giménez · Donostia";
+  "Doctor bolao · Donostia";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: defaultTitle,
     template:
-      "%s · Clínica Giménez Turrillas · Donostia",
+      "%s · Doctor bolao · Donostia",
   },
   description: siteDescription,
   alternates: {
@@ -137,6 +138,7 @@ export default function RootLayout({
           <MobileCtaBar />
         </div>
         <CookieConsent />
+        <Analytics />
       </body>
     </html>
   );

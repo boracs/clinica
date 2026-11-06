@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useId, useState, type FormEvent } from "react";
-import { site } from "@/lib/site";
 import styles from "./ContactForm.module.css";
 
 type FieldName = "nombre" | "email" | "telefono" | "mensaje" | "privacidad";
@@ -17,14 +16,7 @@ type FormValues = {
 
 type FieldErrors = Partial<Record<FieldName, string>>;
 
-type SubmitState = "idle" | "submitting" | "success" | "serverError";
-
-/**
- * Vista previa / demo: el formulario no envía mensajes todavía; en su lugar
- * simula un envío correcto. Pon `false` cuando el envío real (PHP/SMTP o API)
- * esté listo.
- */
-const FORM_DEMO_MODE = true;
+type SubmitState = "idle" | "submitting" | "success";
 
 const initialValues: FormValues = {
   nombre: "",
@@ -89,7 +81,7 @@ export function ContactForm() {
         return next;
       });
     }
-    if (submitState === "serverError" || submitState === "success") {
+    if (submitState === "success") {
       setSubmitState("idle");
     }
   }
@@ -110,39 +102,13 @@ export function ContactForm() {
       return;
     }
 
-    if (FORM_DEMO_MODE) {
-      setValues(initialValues);
-      setErrors({});
-      setSubmitState("success");
-      return;
-    }
-
+    // Demo: no hay backend en el export estático; simulamos el envío.
     setSubmitState("submitting");
-
-    try {
-      const response = await fetch("/contacto.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          nombre: values.nombre.trim(),
-          email: values.email.trim(),
-          telefono: values.telefono.trim(),
-          mensaje: values.mensaje.trim(),
-          privacidad: values.privacidad,
-        }),
-      });
-
-      if (!response.ok) {
-        setSubmitState("serverError");
-        return;
-      }
-
+    window.setTimeout(() => {
       setValues(initialValues);
       setErrors({});
       setSubmitState("success");
-    } catch {
-      setSubmitState("serverError");
-    }
+    }, 600);
   }
 
   return (
@@ -151,11 +117,7 @@ export function ContactForm() {
       onSubmit={handleSubmit}
       noValidate
       aria-describedby={
-        submitState === "success"
-          ? `${formId}-success`
-          : submitState === "serverError"
-            ? `${formId}-server-error`
-            : undefined
+        submitState === "success" ? `${formId}-success` : undefined
       }
     >
       <div className={styles.fieldRow}>
@@ -336,17 +298,6 @@ export function ContactForm() {
             role="status"
           >
             Mensaje enviado. Te responderemos lo antes posible.
-          </p>
-        ) : null}
-
-        {submitState === "serverError" ? (
-          <p
-            id={`${formId}-server-error`}
-            className={styles.statusError}
-            role="alert"
-          >
-            No se ha podido enviar. Prueba otra vez o llámanos al{" "}
-            <a href={site.phoneHref}>{site.phoneDisplay}</a>.
           </p>
         ) : null}
       </div>
