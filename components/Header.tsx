@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
 import { BrandLogo } from "@/components/BrandLogo";
-import { navLinks, site } from "@/lib/site";
+import { assetUrl, navLinks, site } from "@/lib/site";
 import styles from "./Header.module.css";
 
 function normalizePath(path: string) {
@@ -34,7 +34,7 @@ function NavItem({ href, label, className, current, onClick }: NavItemProps) {
   const ariaCurrent = current ? ("page" as const) : undefined;
   if (href.includes("#")) {
     return (
-      <a href={href} className={className} aria-current={ariaCurrent} onClick={onClick}>
+      <a href={assetUrl(href)} className={className} aria-current={ariaCurrent} onClick={onClick}>
         {label}
       </a>
     );
