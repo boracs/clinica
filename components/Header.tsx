@@ -101,7 +101,16 @@ export function Header() {
             aria-label={open ? "Cerrar menú" : "Menú"}
             onClick={() => setOpen((value) => !value)}
           >
-            {open ? "Cerrar" : "Menú"}
+            <span
+              className={`${styles.menuToggleIcon} ${
+                open ? styles.menuToggleIconOpen : ""
+              }`}
+              aria-hidden="true"
+            >
+              <span />
+              <span />
+              <span />
+            </span>
           </button>
         </div>
       </div>
