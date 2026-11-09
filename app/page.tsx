@@ -251,7 +251,7 @@ export default function HomePage() {
           </div>
           <figure className={`${styles.photoBlock} ${styles.locationPhoto}`}>
             <Image
-              src={assetUrl("/images/portal-clinica.png")}
+              src={assetUrl("/images/portal-clinica.webp")}
               alt="Portal de acceso a Calle Loyola, 15, San Sebastián-Donostia"
               width={1200}
               height={900}
