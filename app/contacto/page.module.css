@@ -306,9 +306,9 @@
 }
 
 .mapSide {
+  position: relative;
   width: 100%;
-  min-height: 280px;
-  padding: var(--space-4);
+  min-height: 320px;
   background: var(--color-bg);
   border-top: 1px solid var(--color-border);
 }
@@ -316,25 +316,22 @@
 @media (min-width: 900px) {
   .mapSide {
     min-height: 100%;
-    padding: var(--space-5);
     border-top: 0;
     border-left: 1px solid var(--color-border);
   }
 }
 
 .mapFrame {
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 280px;
+  position: absolute;
+  inset: var(--space-4);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-control);
+  box-shadow: 0 6px 20px rgb(22 48 56 / 0.1);
 }
 
 @media (min-width: 900px) {
   .mapFrame {
-    min-height: 100%;
-    height: 100%;
+    inset: var(--space-5);
   }
 }
 
