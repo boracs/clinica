@@ -113,11 +113,11 @@
   color: var(--color-text-muted);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 900px) {
   .contactGrid {
     display: grid;
     grid-template-columns: 1.2fr 1.05fr 1fr;
-    gap: var(--space-8);
+    gap: var(--space-6);
     align-items: stretch;
   }
 
