@@ -73,51 +73,59 @@
   }
 }
 
-.contactSplit {
+/* —— Contacto: 3 columnas (formulario · info · mapa) —— */
+.contactGrid {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: var(--content-max);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-control);
-  overflow: hidden;
+  gap: var(--space-8);
 }
 
-@media (min-width: 900px) {
-  .contactSplit {
-    display: grid;
-    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-    align-items: stretch;
-    min-height: 480px;
-  }
-}
-
-.infoSide {
-  display: flex;
-  align-items: center;
-  padding: var(--space-6) var(--space-4);
-  background: var(--color-surface);
-}
-
-@media (min-width: 768px) {
-  .infoSide {
-    padding: var(--space-8);
-  }
-}
-
-.infoInner {
+.formCol {
+  order: 3;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-8);
-  width: 100%;
+  gap: var(--space-4);
 }
 
-.infoInner > h2 {
+.infoCol {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-6);
+}
+
+.mapCol {
+  order: 2;
+}
+
+.formCol h2,
+.infoCol h2 {
   margin: 0;
   font-size: 1.5rem;
   line-height: 1.25;
+}
+
+.formLead {
+  margin: 0;
+  max-width: 46ch;
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 1024px) {
+  .contactGrid {
+    display: grid;
+    grid-template-columns: 1.2fr 1.05fr 1fr;
+    gap: var(--space-8);
+    align-items: stretch;
+  }
+
+  .formCol,
+  .infoCol,
+  .mapCol {
+    order: 0;
+  }
 }
 
 .contactList {
@@ -305,34 +313,17 @@
   line-height: 1.2;
 }
 
-.mapSide {
+.mapCol {
   position: relative;
-  width: 100%;
   min-height: 320px;
-  background: var(--color-bg);
-  border-top: 1px solid var(--color-border);
-}
-
-@media (min-width: 900px) {
-  .mapSide {
-    min-height: 100%;
-    border-top: 0;
-    border-left: 1px solid var(--color-border);
-  }
 }
 
 .mapFrame {
   position: absolute;
-  inset: var(--space-4);
+  inset: 0;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-control);
   box-shadow: 0 6px 20px rgb(22 48 56 / 0.1);
-}
-
-@media (min-width: 900px) {
-  .mapFrame {
-    inset: var(--space-5);
-  }
 }
 
 .sectionInner {
@@ -344,45 +335,6 @@
 
 .sectionInner h2 {
   max-width: 22ch;
-}
-
-.formSection {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-8);
-}
-
-.formIntro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-3);
-  width: 100%;
-  max-width: 48rem;
-  text-align: center;
-}
-
-.formIntro h2 {
-  max-width: 22ch;
-}
-
-.formLead {
-  max-width: 65ch;
-  margin: 0;
-  color: var(--color-text-muted);
-}
-
-@media (min-width: 768px) {
-  .formIntro {
-    align-items: flex-start;
-    text-align: left;
-  }
-}
-
-.formWrap {
-  width: 100%;
-  max-width: 48rem;
 }
 
 .actions {

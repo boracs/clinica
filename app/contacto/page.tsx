@@ -36,88 +36,93 @@ export default function ContactoPage() {
 
       <section
         className={styles.contactSection}
-        aria-labelledby="contacto-directo-title"
+        aria-label="Contacto, formulario y mapa"
       >
-        <div className={`container ${styles.contactSplit}`}>
-          <div className={styles.infoSide}>
-            <div className={styles.infoInner}>
-              <h2 id="contacto-directo-title">Teléfono y email</h2>
-              <ul className={styles.contactList}>
-                <li className={styles.contactRow}>
-                  <div className={styles.contactText}>
-                    <span className={styles.contactLabel}>Teléfono</span>
-                    <a href={site.phoneHref}>{site.phoneDisplay}</a>
-                  </div>
-                  <a
-                    href={site.phoneHref}
-                    className={`btn btn--primary ${styles.btnCompact}`}
-                  >
-                    Llamar
-                  </a>
-                </li>
-                <li className={styles.contactRow}>
-                  <div className={styles.contactText}>
-                    <span className={styles.contactLabel}>Email</span>
-                    <a href={site.emailHref}>{site.email}</a>
-                  </div>
-                  <a
-                    href={site.emailHref}
-                    className={`btn btn--secondary ${styles.btnCompact}`}
-                  >
-                    Escribir
-                  </a>
-                </li>
-              </ul>
+        <div className={`container ${styles.contactGrid}`}>
+          <div className={styles.formCol}>
+            <h2 id="contacto-formulario-title">Déjanos un mensaje</h2>
+            <p className={styles.formLead}>
+              Cuéntanos por encima qué necesitas. Te responderemos lo antes
+              posible en el horario de la clínica.
+            </p>
+            <ContactForm />
+          </div>
 
-              <div className={styles.locationBlock}>
-                <h2 id="contacto-direccion-title">Dónde estamos</h2>
-                <div className={styles.addressRow}>
-                  <p className={styles.address}>{site.address}</p>
-                  <a
-                    href={site.mapsHref}
-                    className={`btn btn--secondary ${styles.btnCompact}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Cómo llegar
-                  </a>
+          <div className={styles.infoCol}>
+            <h2 id="contacto-directo-title">Teléfono y email</h2>
+            <ul className={styles.contactList}>
+              <li className={styles.contactRow}>
+                <div className={styles.contactText}>
+                  <span className={styles.contactLabel}>Teléfono</span>
+                  <a href={site.phoneHref}>{site.phoneDisplay}</a>
                 </div>
-                <div className={styles.schedule}>
-                  <h3 className={styles.scheduleTitle}>Horario</h3>
-                  <ul className={styles.scheduleList}>
-                    {site.hours.days.map((item) => {
-                      const closed = item.intervals.length === 0;
-                      return (
-                        <li
-                          key={item.day}
-                          className={`${styles.scheduleRow}${
-                            closed ? ` ${styles.scheduleRowClosed}` : ""
-                          }`}
-                        >
-                          <span className={styles.scheduleDay}>{item.day}</span>
-                          {closed ? (
-                            <span className={styles.scheduleClosed}>
-                              Cerrado
-                            </span>
-                          ) : (
-                            <span className={styles.scheduleSlots}>
-                              {item.intervals.map((slot) => (
-                                <span key={slot} className={styles.scheduleChip}>
-                                  {slot}
-                                </span>
-                              ))}
-                            </span>
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ul>
+                <a
+                  href={site.phoneHref}
+                  className={`btn btn--primary ${styles.btnCompact}`}
+                >
+                  Llamar
+                </a>
+              </li>
+              <li className={styles.contactRow}>
+                <div className={styles.contactText}>
+                  <span className={styles.contactLabel}>Email</span>
+                  <a href={site.emailHref}>{site.email}</a>
                 </div>
+                <a
+                  href={site.emailHref}
+                  className={`btn btn--secondary ${styles.btnCompact}`}
+                >
+                  Escribir
+                </a>
+              </li>
+            </ul>
+
+            <div className={styles.locationBlock}>
+              <h2 id="contacto-direccion-title">Dónde estamos</h2>
+              <div className={styles.addressRow}>
+                <p className={styles.address}>{site.address}</p>
+                <a
+                  href={site.mapsHref}
+                  className={`btn btn--secondary ${styles.btnCompact}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Cómo llegar
+                </a>
+              </div>
+              <div className={styles.schedule}>
+                <h3 className={styles.scheduleTitle}>Horario</h3>
+                <ul className={styles.scheduleList}>
+                  {site.hours.days.map((item) => {
+                    const closed = item.intervals.length === 0;
+                    return (
+                      <li
+                        key={item.day}
+                        className={`${styles.scheduleRow}${
+                          closed ? ` ${styles.scheduleRowClosed}` : ""
+                        }`}
+                      >
+                        <span className={styles.scheduleDay}>{item.day}</span>
+                        {closed ? (
+                          <span className={styles.scheduleClosed}>Cerrado</span>
+                        ) : (
+                          <span className={styles.scheduleSlots}>
+                            {item.intervals.map((slot) => (
+                              <span key={slot} className={styles.scheduleChip}>
+                                {slot}
+                              </span>
+                            ))}
+                          </span>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             </div>
           </div>
 
-          <aside className={styles.mapSide} aria-label="Ubicación en el mapa">
+          <aside className={styles.mapCol} aria-label="Ubicación en el mapa">
             <iframe
               className={styles.mapFrame}
               src={site.mapsEmbedSrc}
@@ -127,24 +132,6 @@ export default function ContactoPage() {
               allowFullScreen
             />
           </aside>
-        </div>
-      </section>
-
-      <section
-        className={styles.section}
-        aria-labelledby="contacto-formulario-title"
-      >
-        <div className={`container ${styles.formSection}`}>
-          <div className={styles.formIntro}>
-            <h2 id="contacto-formulario-title">Déjanos un mensaje</h2>
-            <p className={styles.formLead}>
-              Cuéntanos por encima qué necesitas. Te responderemos lo antes
-              posible en el horario de la clínica.
-            </p>
-          </div>
-          <div className={styles.formWrap}>
-            <ContactForm />
-          </div>
         </div>
       </section>
 
